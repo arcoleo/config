@@ -1,0 +1,10 @@
+root = /Volumes/DataStore/username/media
+root = ssh://hostname//opt2/username/media
+killserver = true
+confirmmerge = true
+times = true
+# auto = true
+prefer = /Volumes/DataStore/username/media
+ignore = Name .DS_Store
+ignore = Name *~
+

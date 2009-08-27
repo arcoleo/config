@@ -1,0 +1,183 @@
+OS=`uname -s`
+
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+if [ $OS == "Linux" ]; then
+    [ -z "$PS1" ] && return
+fi
+
+if [ $OS == "Linux" ]; then
+    # don't put duplicate lines in the history. See bash(1) for more options
+    # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+    export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+    # ... or force ignoredups and ignorespace
+    export HISTCONTROL=ignoreboth
+fi
+
+# append to the history file, don't overwrite it
+if [ $OS == "Linux" ]; then
+    shopt -s histappend
+fi
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+if [ $OS == "Linux" ]; then
+    shopt -s checkwinsize
+fi
+
+# make less more friendly for non-text input files, see lesspipe(1)
+if [ $OS == "Linux" ]; then
+    [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+fi
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ $OS == "Linux" ]; then
+    if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+        debian_chroot=$(cat /etc/debian_chroot)
+    fi
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+if [ $OS == "Linux" ]; then
+    case "$TERM" in
+        xterm-color) color_prompt=yes;;
+    esac
+fi
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ $OS == "Linux" ]; then
+    if [ -n "$force_color_prompt" ]; then
+        if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	    # We have color support; assume it's compliant with Ecma-48
+	    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	    # a case would tend to support setf rather than setaf.)
+	    color_prompt=yes
+        else
+	    color_prompt=
+        fi
+    fi
+fi
+
+if [ $OS == "Linux" ]; then
+    if [ "$color_prompt" = yes ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    fi
+fi
+unset color_prompt force_color_prompt
+
+if [ $OS == "Linux" ]; then
+    # If this is an xterm set the title to user@host:dir
+    case "$TERM" in
+    xterm*|rxvt*)
+        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+        ;;
+    *)
+        ;;
+    esac
+fi
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+#if [ -f ~/.bash_aliases ]; then
+#    . ~/.bash_aliases
+#fi
+
+# enable color support of ls and also add handy aliases
+if [ $OS == "Linux" ]; then
+    if [ -x /usr/bin/dircolors ]; then
+        eval "`dircolors -b`"
+        alias ls='ls --color=auto'
+        #alias dir='dir --color=auto'
+        #alias vdir='vdir --color=auto'
+
+        #alias grep='grep --color=auto'
+        #alias fgrep='fgrep --color=auto'
+        #alias egrep='egrep --color=auto'
+    fi
+fi
+
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ $OS == "Linux" ]; then
+    if [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
+fi
+
+# Python stuff
+if [ $OS == "Darwin" ]; then
+    export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+    export PYTHONPATH=/Library/Python2.5/site-packages
+fi
+
+# Mercurial Stuff
+umask 002
+
+# Java Stuff
+if [ $OS == "Darwin" ]; then
+    export JAVA_HOME=/Library/Java/Home
+    export CATALINA_HOME=/Library/Tomcat/Home
+    export PATH=$PATH:~/hadoop-0.19.0/bin
+elif [ $OS == "Linux" ]; then
+    export JAVA_HOME=/usr/lib/jvm/java-6-sun
+fi
+
+# General Mac Stuff
+if [ $OS == "Darwin" ]; then
+    export CLICOLOR=1
+    export TERM=xterm-color
+    export COMMAND_MODE=unix2003
+fi
+
+# Emacs Stuff
+
+# Open in existing frame
+if [ $OS == "Darwin" ]; then
+    alias ec="/Applications/Emacs23.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs23.app/Contents/MacOS/Emacs"
+elif [ $OS == "Linux" ]; then
+    alias ec="emacsclient -n -a emacs"
+fi
+
+# Open in terminal
+if [ $OS == "Darwin" ]; then
+    alias et="/Applications/Emacs23.app/Contents/MacOS/bin/emascclient -t -a /Applications/Emacs23.app/Contents/MacOS/Emacs -nw"
+elif [ $OS == "Linux" ]; then
+    alias et="emacsclient -t -a emacs -nw"
+fi
+
+# Open in new frame
+if [ $OS == "Darwin" ]; then
+    alias ef="/Applications/Emacs23.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs23.app/Contents/MacOS/Emacs"
+elif [ $OS == "Linux" ]; then
+    alias ef="emacsclient -n -c -a emacs"
+fi
+
+# Erlang Stuff
+
+
+# Ruby Stuff
+export PATH=$PATH:/var/lib/gems/1.8/bin/
+
+# General Aliases
+alias rctl='rabbitmqctl'
+
