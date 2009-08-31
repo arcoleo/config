@@ -1,0 +1,10 @@
+#Alias /DSAWiki /var/webapps/DSAWiki
+JkWorkersFile /etc/apache2/workers.properties
+# Where to put jk shared memory
+JkShmFile /var/log/apache2/mod_jk.shm
+JkLogFile /var/log/apache2/mod_jk.log
+JkLogLevel debug
+JkLogStampFormat "[%a %b %d %H:%M:%S %Y] "
+JkMount /DSAWiki/* worker1
+JkMount /dsawiki/* worker1
+
