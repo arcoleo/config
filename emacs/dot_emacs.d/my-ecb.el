@@ -1,5 +1,5 @@
 ;(add-to-list 'load-path "/usr/share/emacs/site-lisp/ecb")
-(add-to-list 'load-path "~/apps/ecb-2.40")
+(add-to-list 'load-path "~/apps/emacs/ecb")
 (require 'ecb)
 '(ecb-highlight-tag-with-point (quote highlight-scroll))
 '(ecb-process-non-semantic-files t)

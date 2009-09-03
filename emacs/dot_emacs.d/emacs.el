@@ -1,4 +1,11 @@
 ; how to determine platform / emacs version?
+
+(add-to-list 'load-path "~/apps/emacs/yasnippet")
+;(add-to-list 'load-path "~/apps/emacs/rope/ropemacs")
+;(add-to-list 'load-path "~/apps/emacs/pymacs")
+;(progn (cd "~/apps/emacs")
+;	(normal-top-level-add-subdirs-to-load-path))
+
 (load "~/.emacs.d/version.el")
 (load "~/.emacs.d/os.el")
 (load "~/.emacs.d/backups.el")
@@ -8,7 +15,9 @@
 (load "~/.emacs.d/key-bindings.el")
 ;(load "~/.emacs.d/tabs4.el")
 (load "~/.emacs.d/python-mode.el")
-(load "~/.emacs.d/my-python.el")
+(load "~/.emacs.d/pymacs.elc")
+;(load "~/.emacs.d/my-python.el")
+(load "~/.emacs.d/init-python")
 (load "~/.emacs.d/searching.el")
 (load "~/.emacs.d/recreate-killed-buffers.el")
 (load "~/.emacs.d/window.el")
@@ -19,15 +28,20 @@
 (ido-mode t)
 
 
-(load-file "~/apps/cedet-1.0pre6/common/cedet.el")
+(load-file "~/apps/emacs/cedet/common/cedet.el")
 (global-ede-mode 1)
 (semantic-load-enable-code-helpers)
 
 (load "~/.emacs.d/my-ecb.el")
 
+;; Auto-complete
+(require 'auto-complete)
+(global-auto-complete-mode t)
 
 
-
+(require 'yasnippet)
+(yas/initialize)
+;(yas/load-directory “~/apps/emacs/yasnippet/snippets”)
 
 
 ;(add-to-list 'load-path "/usr/share/emacs/site-lisp/ecb")
