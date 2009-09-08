@@ -1,2 +1,54 @@
-Emacs configuration scripts.
+h2. Emacs configuration
 
+h3. Cedet
+
+If you want to use Cedet, you must check out from cvs.
+
+cvs -z3 -d:pserver:anonymous@cedet.cvs.sourceforget.net:/cvsroot/cedet co -P cedet
+
+
+Compile -
+
+<code>
+$ cd cedet
+$ make
+</code>
+
+h3. ECB
+
+Download ecb 2.40
+
+
+h3. Pymacs
+
+
+h3. Rope
+
+<code>
+$ cd /path/to/repos
+$ mkdir -p agr/rope
+$ cd agr/rope
+$ hg clone http://bitbucket.org/agr/rope
+$ hg clone http://bitbucket.org/agr/ropemacs
+$ hg clone http://bitbucket.org/agr/ropemode
+$ cd ropemacs
+$ ln -s ../ropemode/ropemode ropemode
+$ cd ../rope
+$ sudo python setup.py install
+$ cd ../ropemacs
+$ sudo python setup.py install
+</code>
+
+Quick test : you should be able to import ropemacs in a python shell.
+
+h3. Links
+
+<code>
+$ cd ~
+$ mkdir -p apps/emacs
+$ cd apps/emacs
+$ ln -s /path/to/cedet cedet
+$ mv /path/to/ecb-2.40 .
+$ ln -s ecb-2.40 ecb
+$ ln -s /path/to/repos/agr/rope rope 
+</code>

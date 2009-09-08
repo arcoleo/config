@@ -15,7 +15,7 @@
 (load "~/.emacs.d/key-bindings.el")
 ;(load "~/.emacs.d/tabs4.el")
 (load "~/.emacs.d/python-mode.el")
-(load "~/.emacs.d/pymacs.elc")
+;(load "~/.emacs.d/pymacs.elc")
 ;(load "~/.emacs.d/my-python.el")
 (load "~/.emacs.d/init-python")
 (load "~/.emacs.d/searching.el")
@@ -27,6 +27,8 @@
 (require 'ido)
 (ido-mode t)
 
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
 
 (load-file "~/apps/emacs/cedet/common/cedet.el")
 (global-ede-mode 1)
