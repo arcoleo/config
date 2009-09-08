@@ -4,15 +4,16 @@ h3. Cedet
 
 If you want to use Cedet, you must check out from cvs.
 
+<pre><code>
 cvs -z3 -d:pserver:anonymous@cedet.cvs.sourceforget.net:/cvsroot/cedet co -P cedet
-
+</code></pre>
 
 Compile -
 
-<code>
+<pre><code>
 $ cd cedet
 $ make
-</code>
+</code></pre>
 
 h3. ECB
 
