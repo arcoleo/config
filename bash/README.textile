@@ -1,0 +1,12 @@
+h2. Bash configuration scripts.
+
+h3. Mercurial
+
+I am using mercurial and hg-prompt.  You need to install it 
+
+<pre><code>$ hg clone http://bitbucket.org/sjl/hg-prompt
+</code></pre>
+
+and edit your ~/.hgrc file.  Mine is in this repo.
+
+
