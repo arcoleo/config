@@ -181,3 +181,6 @@ export PATH=$PATH:/var/lib/gems/1.8/bin/
 # General Aliases
 alias rctl='rabbitmqctl'
 
+# Python stuff
+export PYTHONPATH=/Library/Python2.6/site-packages::~/apps/emacs/rope/ropemacs
+
