@@ -25,7 +25,7 @@ h3. Pymacs
 
 h3. Rope
 
-<code>
+<pre><code>
 $ cd /path/to/repos
 $ mkdir -p agr/rope
 $ cd agr/rope
@@ -38,7 +38,7 @@ $ cd ../rope
 $ sudo python setup.py install
 $ cd ../ropemacs
 $ sudo python setup.py install
-</code>
+</code></pre>
 
 Quick test : you should be able to import ropemacs in a python shell.
 
