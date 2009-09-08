@@ -41,12 +41,11 @@ Quick test : you should be able to import ropemacs in a python shell.
 
 h3. Links
 
-<code>
-$ cd ~
+<pre><code>$ cd ~
 $ mkdir -p apps/emacs
 $ cd apps/emacs
 $ ln -s /path/to/cedet cedet
 $ mv /path/to/ecb-2.40 .
 $ ln -s ecb-2.40 ecb
 $ ln -s /path/to/repos/agr/rope rope 
-</code>
+</code></pre>
