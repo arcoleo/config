@@ -28,4 +28,5 @@
 )
 
 (add-hook 'python-mode-hook 'my-python)
-
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")

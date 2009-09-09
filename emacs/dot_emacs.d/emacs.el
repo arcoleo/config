@@ -1,10 +1,6 @@
 ; how to determine platform / emacs version?
 
 (add-to-list 'load-path "~/apps/emacs/yasnippet")
-;(add-to-list 'load-path "~/apps/emacs/rope/ropemacs")
-;(add-to-list 'load-path "~/apps/emacs/pymacs")
-;(progn (cd "~/apps/emacs")
-;	(normal-top-level-add-subdirs-to-load-path))
 
 (load "~/.emacs.d/version.el")
 (load "~/.emacs.d/os.el")
@@ -13,22 +9,17 @@
 (load "~/.emacs.d/frame_title_bar_path.el")
 (load "~/.emacs.d/yes-no.el")
 (load "~/.emacs.d/key-bindings.el")
-;(load "~/.emacs.d/tabs4.el")
-(load "~/.emacs.d/python-mode.el")
-;(load "~/.emacs.d/pymacs.elc")
-;(load "~/.emacs.d/my-python.el")
+(load "~/.emacs.d/tabs4.el")
 (load "~/.emacs.d/init-python")
 (load "~/.emacs.d/searching.el")
 (load "~/.emacs.d/recreate-killed-buffers.el")
 (load "~/.emacs.d/window.el")
-;(load "~/.emacs.d/python.el")
 (load "~/.emacs.d/perl.el")
 (load "~/.emacs.d/wombat.el")
 (require 'ido)
 (ido-mode t)
 
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
+
 
 (load-file "~/apps/emacs/cedet/common/cedet.el")
 (global-ede-mode 1)
@@ -44,10 +35,6 @@
 (require 'yasnippet)
 (yas/initialize)
 ;(yas/load-directory “~/apps/emacs/yasnippet/snippets”)
-
-
-;(add-to-list 'load-path "/usr/share/emacs/site-lisp/ecb")
-;(require 'ecb)
 
 ;; get a buffer menu with the right mouse button.
 (global-set-key (kbd "<mouse-3>") 'mouse-buffer-menu)
@@ -78,7 +65,7 @@
 ;(set-face-background 'highlight "#330")  ;; Emacs 21 Only
 
 
-'global-whitespace-mode
+;'global-whitespace-mode
 ;(autoload 'whitespace-mode "whitespace" "Toggle whitespace visualization." t)
 ;(autoload 'whitespace-toggle-options "whitespace" "Toggle local `whitespace-mode' options." t)
 
