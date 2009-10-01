@@ -1,5 +1,9 @@
 ; how to determine platform / emacs version?
 
+(tool-bar-mode -1)
+(setq max-lisp-eval-depth 4192)
+(setq max-specpdl-size 32000) 
+
 (add-to-list 'load-path "~/apps/emacs/yasnippet")
 
 (load "~/.emacs.d/version.el")
@@ -10,7 +14,7 @@
 (load "~/.emacs.d/yes-no.el")
 (load "~/.emacs.d/key-bindings.el")
 (load "~/.emacs.d/tabs4.el")
-(load "~/.emacs.d/init-python")
+(load "~/.emacs.d/init-python.el")
 (load "~/.emacs.d/searching.el")
 (load "~/.emacs.d/recreate-killed-buffers.el")
 (load "~/.emacs.d/window.el")
@@ -19,7 +23,7 @@
 (require 'ido)
 (ido-mode t)
 
-
+;(load "~/.emacs.d/my-autocomplete.el")
 
 (load-file "~/apps/emacs/cedet/common/cedet.el")
 (global-ede-mode 1)
@@ -30,11 +34,14 @@
 ;; Auto-complete
 (require 'auto-complete)
 (global-auto-complete-mode t)
-
-
 (require 'yasnippet)
 (yas/initialize)
 ;(yas/load-directory “~/apps/emacs/yasnippet/snippets”)
+
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
+
 
 ;; get a buffer menu with the right mouse button.
 (global-set-key (kbd "<mouse-3>") 'mouse-buffer-menu)
