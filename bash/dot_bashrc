@@ -185,8 +185,13 @@ fi
 # Ruby Stuff
 export PATH=$PATH:/var/lib/gems/1.8/bin/
 
+# Hadoop Stuff
+export PATH=$PATH:~/hadoop/0.19.0/bin
+export HADOOP_HOME=~/hadloop/0.19.0
+
 # General Aliases
 alias rctl='rabbitmqctl'
+export PATH=$PATH:~/apps
 
 # Python stuff
 export PYTHONPATH=/Library/Python2.6/site-packages::~/apps/emacs/rope/ropemacs

@@ -83,4 +83,7 @@
 ;(autoload 'whitespace-mode t)
 (global-set-key [backspace] 'delete-backward-char)
 
+(setq py-smart-indentation nil)
+                (setq py-indent-offset 4)
+                (setq py-continuation-offset 0)
 

@@ -9,9 +9,13 @@
 	(set-variable 'py-indent-offset 4)
 	;(set-variable 'py-smart-indentation nil)
 	(set-variable 'indent-tabs-mode nil)
+	(setq py-smart-indentation nil)
+        (setq py-indent-offset 4)
+        (setq py-continuation-offset 0)
+
 	(define-key py-mode-map (kbd "RET") 'newline-and-indent)
-	;(define-key py-mode-map [tab] 'yas/expand)
-	;(setq yas/after-exit-snippet-hook 'indent-according-to-mode)
+	(define-key py-mode-map [tab] 'yas/expand)
+	(setq yas/after-exit-snippet-hook 'indent-according-to-mode)
 	(smart-operator-mode-on)
 	))
     
