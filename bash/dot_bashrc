@@ -132,12 +132,12 @@ fi
 
 # Mercurial Stuff
 umask 002
-hg_ps1() {
-    hg prompt "{
-{branch}}{ at {bookmark}} {status}" 2> /dev/null
-}
+#hg_ps1() {
+#    hg prompt "{
+#{branch}}{ at {bookmark}} {status}" 2> /dev/null
+#}
 
-export PS1='$(hg_ps1)\n'$PS1
+#export PS1='$(hg_ps1)\n'$PS1
 
 
 # Java Stuff
