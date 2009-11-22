@@ -1,10 +1,8 @@
 ; how to determine platform / emacs version?
-
+(setq inhibit-splash-screen t)
 (tool-bar-mode -1)
-(setq max-lisp-eval-depth 4192)
-(setq max-specpdl-size 32000) 
 
-(add-to-list 'load-path "~/apps/emacs/yasnippet")
+
 
 (load "~/.emacs.d/version.el")
 (load "~/.emacs.d/os.el")
@@ -20,6 +18,8 @@
 (load "~/.emacs.d/window.el")
 (load "~/.emacs.d/perl.el")
 (load "~/.emacs.d/wombat.el")
+(add-to-list 'load-path "~/apps/emacs/yasnippet")
+
 (require 'ido)
 (ido-mode t)
 
