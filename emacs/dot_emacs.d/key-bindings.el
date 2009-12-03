@@ -42,3 +42,5 @@
 (global-set-key [f11] 'recompile)
 (global-set-key [S-f11] 'my-compile-clean-func)
 (global-set-key [S-f7] 'next-error)
+(global-set-key [f12] 'revert-buffer)
+
