@@ -16,9 +16,9 @@
 (load "~/.emacs.d/searching.el")
 (load "~/.emacs.d/recreate-killed-buffers.el")
 (load "~/.emacs.d/window.el")
-(load "~/.emacs.d/perl.el")
+;(load "~/.emacs.d/perl.el")
 (load "~/.emacs.d/wombat.el")
-(add-to-list 'load-path "~/apps/emacs/yasnippet")
+;(add-to-list 'load-path "~/apps/emacs/yasnippet")
 
 (require 'ido)
 (ido-mode t)
@@ -33,9 +33,12 @@
 
 ;; Auto-complete
 (require 'auto-complete)
+(require 'auto-complete-config)
 (global-auto-complete-mode t)
-(require 'yasnippet)
-(yas/initialize)
+(load "~/.emacs.d/my-autocomplete")
+
+;(require 'yasnippet)
+;(yas/initialize)
 ;(yas/load-directory “~/apps/emacs/yasnippet/snippets”)
 
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
