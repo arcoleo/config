@@ -132,12 +132,12 @@ fi
 
 # Mercurial Stuff
 umask 002
-hg_ps1() {
-    hg prompt "{
-{branch}}{ at {bookmark}} {status}" 2> /dev/null
-}
+#hg_ps1() {
+#    hg prompt "{
+#{branch}}{ at {bookmark}} {status}" 2> /dev/null
+#}
 
-export PS1='$(hg_ps1)\n'$PS1
+#export PS1='$(hg_ps1)\n'$PS1
 
 
 # Java Stuff
@@ -177,6 +177,11 @@ if [ $OS == "Darwin" ]; then
     alias ef="/Applications/Emacs23.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs23.app/Contents/MacOS/Emacs"
 elif [ $OS == "Linux" ]; then
     alias ef="emacsclient -n -c -a emacs"
+fi
+
+# Firefox stuff
+if [ $OS == "Linux" ]; then
+    export LD_PRELOAD=$HOME/.mozilla/fsync.so
 fi
 
 # Erlang Stuff
