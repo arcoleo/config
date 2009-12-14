@@ -30,11 +30,13 @@
 (semantic-load-enable-code-helpers)
 
 (load "~/.emacs.d/my-ecb.el")
+;(require 'sr-speedbar)
+
 
 ;; Auto-complete
 (require 'auto-complete)
 (require 'auto-complete-config)
-(global-auto-complete-mode t)
+;(global-auto-complete-mode t)
 (load "~/.emacs.d/my-autocomplete")
 
 ;(require 'yasnippet)
