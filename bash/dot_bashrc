@@ -154,6 +154,7 @@ if [ $OS == "Darwin" ]; then
     export CLICOLOR=1
     export TERM=xterm-color
     export COMMAND_MODE=unix2003
+    export PATH=$PATH:/usr/local/mysql/bin
 fi
 
 # Emacs Stuff
