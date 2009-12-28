@@ -11,7 +11,7 @@
 (if (system-type-is-darwin)
 	(setq default-frame-alist
 	(append default-frame-alist
-	'((font . "Inconsolata-13")
+	'((font . "Inconsolata-11")
 ))))
 
 (if (system-type-is-gnu)
