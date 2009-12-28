@@ -186,6 +186,9 @@ if [ $OS == "Linux" ]; then
 fi
 
 # Erlang Stuff
+if [ $OS == "Darwin" ]; then
+    export PATH=$PATH:/sw/rabbitmq_server-1.7.0/sbin
+fi
 
 
 # Ruby Stuff
