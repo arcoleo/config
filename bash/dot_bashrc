@@ -141,6 +141,7 @@ umask 002
 
 
 # Java Stuff
+export PATH=$PATH:~/apps/play
 if [ $OS == "Darwin" ]; then
     export JAVA_HOME=/Library/Java/Home
     export CATALINA_HOME=/Library/Tomcat/Home
