@@ -25,7 +25,7 @@
 
 ;(load "~/.emacs.d/my-autocomplete.el")
 
-(load-file "~/apps/emacs/cedet/common/cedet.el")
+(load-file "~/apps/emacs/cedet/common/cedet.elc")
 (global-ede-mode 1)
 (semantic-load-enable-code-helpers)
 

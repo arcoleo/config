@@ -4,8 +4,21 @@ h3. Cedet
 
 If you want to use Cedet, you must check out from cvs.
 
-<pre><code>cvs -z3 -d:pserver:anonymous@cedet.cvs.sourceforget.net:/cvsroot/cedet co -P cedet
+<pre><code>cvs -z3 -d:pserver:anonymous@cedet.cvs.sourceforge.net:/cvsroot/cedet co -P cedet
 </code></pre>
+
+Compilation Settings -
+
+In the Makefile, set
+
+<pre><code>EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
+</code></pre>
+
+if you are using Emacs.app.
+
+Also set
+
+CEDET=/Users/you/apps/emacs/cedet
 
 Compile -
 
@@ -16,6 +29,15 @@ $ make
 h3. ECB
 
 Download ecb 2.40
+
+Compilation Settings -
+
+In the Makefile, set
+
+<pre><code>EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
+</code></pre>
+
+if you are using Emacs.app.
 
 
 h3. Pymacs
