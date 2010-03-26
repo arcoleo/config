@@ -216,3 +216,12 @@ if [ $OS == "Darwin" ]; then
     export PATH=$PATH:/$MAGICK_HOME/bin
     export DYLD_LIBRARY_PATH=$MAGICK_HOME/lib
 fi
+
+# Lucene
+if [ $OS == "Darwin" ]; then
+    export CLASSPATH=$CLASSPATH:"/Users/arcoleo/apps/lucene/lucene-core.jar"
+    export CLASSPATH=$CLASSPATH:"/Users/arcoleo/apps/lucene/lucene-demos.jar"
+elif [ $OS == "Linux" ]; then
+    export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-core.jar"
+    export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-demos.jar"
+fi
