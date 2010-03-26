@@ -127,7 +127,7 @@ fi
 # Python stuff
 if [ $OS == "Darwin" ]; then
     export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-    export PYTHONPATH=/Library/Python2.5/site-packages
+    export PYTHONPATH=/Library/Python/2.6/site-packages:/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages:~/apps/emacs/rope/ropemacs
 fi
 
 # Mercurial Stuff
@@ -145,7 +145,6 @@ export PATH=$PATH:~/apps/play
 if [ $OS == "Darwin" ]; then
     export JAVA_HOME=/Library/Java/Home
     export CATALINA_HOME=/Library/Tomcat/Home
-    export PATH=$PATH:~/hadoop-0.19.0/bin
 elif [ $OS == "Linux" ]; then
     export JAVA_HOME=/usr/lib/jvm/java-6-sun
 fi
@@ -162,7 +161,8 @@ fi
 
 # Open in existing frame
 if [ $OS == "Darwin" ]; then
-    alias ec="/Applications/Emacs23.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs23.app/Contents/MacOS/Emacs"
+    export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:${PATH}"
+    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs23.app/Contents/MacOS/Emacs"
 elif [ $OS == "Linux" ]; then
     alias ec="emacsclient -n -a emacs"
 fi
@@ -182,9 +182,9 @@ elif [ $OS == "Linux" ]; then
 fi
 
 # Firefox stuff
-if [ $OS == "Linux" ]; then
-    export LD_PRELOAD=$HOME/.mozilla/fsync.so
-fi
+#if [ $OS == "Linux" ]; then
+#    export LD_PRELOAD=$HOME/.mozilla/fsync.so
+#fi
 
 # Erlang Stuff
 if [ $OS == "Darwin" ]; then
@@ -196,15 +196,19 @@ fi
 export PATH=$PATH:/var/lib/gems/1.8/bin/
 
 # Hadoop Stuff
-export PATH=$PATH:~/hadoop/0.19.0/bin
-export HADOOP_HOME=~/hadloop/0.19.0
+if [ $OS == "Darwin" ]; then
+	export PATH=$PATH:~/hadoop/0.20.1/bin
+	export HADOOP_HOME=~/hadoop/0.20.1
+elif [ $OS == "Linux" ]; then
+	export PATH=$PATH:~/hadoop/0.19.0/bin
+	export HADOOP_HOME=~/hadoop/0.19.0
+fi
 
 # General Aliases
 alias rctl='rabbitmqctl'
 export PATH=$PATH:~/apps
 
-# Python stuff
-export PYTHONPATH=/Library/Python2.6/site-packages::~/apps/emacs/rope/ropemacs
+
 
 # ImageMagick
 if [ $OS == "Darwin" ]; then
