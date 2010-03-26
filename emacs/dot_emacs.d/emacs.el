@@ -62,7 +62,7 @@
 
 
 (require 'tramp)
-(setq tramp-default-method "rsync")
+(setq tramp-default-method "ssh")
 
 
 ; auto update files

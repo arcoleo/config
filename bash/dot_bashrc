@@ -182,9 +182,9 @@ elif [ $OS == "Linux" ]; then
 fi
 
 # Firefox stuff
-if [ $OS == "Linux" ]; then
-    export LD_PRELOAD=$HOME/.mozilla/fsync.so
-fi
+#if [ $OS == "Linux" ]; then
+#    export LD_PRELOAD=$HOME/.mozilla/fsync.so
+#fi
 
 # Erlang Stuff
 if [ $OS == "Darwin" ]; then
@@ -199,7 +199,7 @@ export PATH=$PATH:/var/lib/gems/1.8/bin/
 if [ $OS == "Darwin" ]; then
 	export PATH=$PATH:~/hadoop/0.20.1/bin
 	export HADOOP_HOME=~/hadoop/0.20.1
-elif [$OS == "Linux" ]; then
+elif [ $OS == "Linux" ]; then
 	export PATH=$PATH:~/hadoop/0.19.0/bin
 	export HADOOP_HOME=~/hadoop/0.19.0
 fi
