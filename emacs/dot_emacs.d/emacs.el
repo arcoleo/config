@@ -13,6 +13,7 @@
 (load "~/.emacs.d/key-bindings.el")
 (load "~/.emacs.d/tabs4.el")
 (load "~/.emacs.d/init-python.el")
+(load "~/.emacs.d/init-cc.el")
 (load "~/.emacs.d/searching.el")
 (load "~/.emacs.d/recreate-killed-buffers.el")
 (load "~/.emacs.d/window.el")
