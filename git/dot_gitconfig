@@ -1,3 +1,9 @@
 [user]
 	name = David Arcoleo
 	email = david@arcoleo.org
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 999x697+2407+369
+	main-window-view = HistoryView
+	history-view-vpane-position = 491
+	file-view-vpane-position = 341
