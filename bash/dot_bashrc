@@ -1,4 +1,9 @@
 OS=`uname -s`
+HOST=`uname -n`
+
+if [$HOST == "workerbee.igb.uiuc.edu" ]; then
+	source /raid/apps/universal_config/bashrc
+fi
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
