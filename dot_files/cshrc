@@ -1,0 +1,4 @@
+set path = (~/bin /usr/local/bin /usr/bin /opt/firefox $path)
+
+alias python /usr/bin/python26
+
