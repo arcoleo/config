@@ -1,7 +1,7 @@
 OS=`uname -s`
 HOST=`uname -n`
 
-if [$HOST == "workerbee.igb.uiuc.edu" ]; then
+if [ $HOST == "workerbee.igb.uiuc.edu" ]; then
 	source /raid/apps/universal_config/bashrc
 fi
 
@@ -169,7 +169,7 @@ if [ $OS == "Darwin" ]; then
     export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:${PATH}"
     alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs23.app/Contents/MacOS/Emacs"
 elif [ $OS == "Linux" ]; then
-    alias ec="emacsclient -n -a emacs"
+    alias ec="emacsclient -n  -a emacs"
 fi
 
 # Open in terminal
@@ -229,4 +229,9 @@ if [ $OS == "Darwin" ]; then
 elif [ $OS == "Linux" ]; then
     export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-core.jar"
     export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-demos.jar"
+fi
+
+# Work path
+if [ $USER == "darcoleo" ]; then
+   export PATH=~/bin:/usr/local/bin:/usr/bin:/opt/firefox:$PATH
 fi
