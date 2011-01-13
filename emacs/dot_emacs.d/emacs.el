@@ -27,7 +27,7 @@
 
 ;(load "~/.emacs.d/my-autocomplete.el")
 
-(load-file "~/apps/emacs/cedet-1.0pre7/common/cedet.elc")
+(load-file "~/apps/emacs/cedet/common/cedet.elc")
 ;(require 'cedet)
 ;(semantic-mode 1)
 (global-ede-mode 1)

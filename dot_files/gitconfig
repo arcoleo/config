@@ -3,7 +3,7 @@
 	email = david@arcoleo.org
 [giggle]
 	main-window-maximized = false
-	main-window-geometry = 999x697+2407+369
+	main-window-geometry = 698x667+366+33
 	main-window-view = HistoryView
-	history-view-vpane-position = 491
-	file-view-vpane-position = 341
+	history-view-vpane-position = 466
+	file-view-vpane-position = 596
