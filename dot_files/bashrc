@@ -235,3 +235,5 @@ fi
 if [ $USER == "darcoleo" ]; then
    export PATH=~/bin:/usr/local/bin:/usr/bin:/opt/firefox:$PATH
 fi
+
+source ~/.bashrc.ip
