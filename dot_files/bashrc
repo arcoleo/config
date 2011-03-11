@@ -131,8 +131,9 @@ fi
 
 # Python stuff
 if [ $OS == "Darwin" ]; then
-    export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-    export PYTHONPATH=/Library/Python/2.6/site-packages:/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages:~/apps/emacs/rope/ropemacs
+	export PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
+    export PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
+    export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/site-packages:~/apps/emacs/rope/ropemacs"
 fi
 
 # Mercurial Stuff
@@ -160,6 +161,9 @@ if [ $OS == "Darwin" ]; then
     export TERM=xterm-color
     export COMMAND_MODE=unix2003
     export PATH=$PATH:/usr/local/mysql/bin
+    
+    # MacPorts
+    export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 fi
 
 # Emacs Stuff
@@ -211,9 +215,6 @@ fi
 
 # General Aliases
 alias rctl='rabbitmqctl'
-export PATH=$PATH:~/apps
-
-
 
 # ImageMagick
 if [ $OS == "Darwin" ]; then
@@ -233,7 +234,7 @@ fi
 
 # Work path
 if [ $USER == "darcoleo" ]; then
-   export PATH=~/bin:/usr/local/bin:/usr/bin:/opt/firefox:$PATH
+   export PATH=~/bin:~/apps:/usr/local/bin:/usr/bin:/opt/firefox:$PATH
 fi
 
 source ~/.bashrc.ip
