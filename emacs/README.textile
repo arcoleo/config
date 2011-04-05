@@ -45,7 +45,7 @@ h3. Pymacs
 At the time of this writing, the latest released version is 0.23
 
 <pre><code>$ cd ~/apps
-$ curl -O http://pymacs.progiciels-bpi.ca/archives/Pymacs.tar.gz
+$ curl -o Pymacs.tar.gz https://github.com/pinard/Pymacs/tarball/v0.23-beta9
 $ tar xvfz Pymacs.tar.gz
 $ cd Pymacs-0.23
 $ make
