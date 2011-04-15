@@ -14,11 +14,15 @@ In the Makefile, set
 <pre><code>EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
 </code></pre>
 
-if you are using Emacs.app.
+if you are using Emacs.app.  If you are using Linux or BSD or something, it may be
+
+<pre><code>EMACS=/usr/local/bin/emacs
+</code></pre>
 
 Also set
 
-CEDET=/Users/you/apps/emacs/cedet
+<pre><code>CEDET_HOME=/Users/you/apps/emacs/cedet
+</code></pre>
 
 Compile -
 
