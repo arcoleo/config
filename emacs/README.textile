@@ -30,6 +30,8 @@ Compile -
 $ make
 </code></pre>
 
+NOTE: if you are on BSD, use gmake.
+
 h3. ECB
 
 Download ecb 2.40
