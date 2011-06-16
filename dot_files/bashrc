@@ -2,7 +2,7 @@ OS=`uname -s`
 HOST=`uname -n`
 
 if [ $HOST == "workerbee.igb.uiuc.edu" ]; then
-	source /raid/apps/universal_config/bashrc
+    source /raid/apps/universal_config/bashrc
 fi
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -62,12 +62,12 @@ fi
 if [ $OS == "Linux" ]; then
     if [ -n "$force_color_prompt" ]; then
         if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	    # We have color support; assume it's compliant with Ecma-48
-	    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	    # a case would tend to support setf rather than setaf.)
-	    color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
         else
-	    color_prompt=
+        color_prompt=
         fi
     fi
 fi
@@ -131,8 +131,7 @@ fi
 
 # Python stuff
 if [ $OS == "Darwin" ]; then
-	export PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
-    export PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
+    export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
     export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/site-packages:~/apps/emacs/rope/ropemacs"
 fi
 
@@ -197,11 +196,11 @@ export PATH=$PATH:/var/lib/gems/1.8/bin/
 
 # Hadoop Stuff
 if [ $OS == "Darwin" ]; then
-	export PATH=$PATH:~/hadoop/0.20.1/bin
-	export HADOOP_HOME=~/hadoop/0.20.1
+    export PATH=$PATH:~/hadoop/0.20.1/bin
+    export HADOOP_HOME=~/hadoop/0.20.1
 elif [ $OS == "Linux" ]; then
-	export PATH=$PATH:~/hadoop/0.19.0/bin
-	export HADOOP_HOME=~/hadoop/0.19.0
+    export PATH=$PATH:~/hadoop/0.19.0/bin
+    export HADOOP_HOME=~/hadoop/0.19.0
 fi
 
 # General Aliases
@@ -238,5 +237,3 @@ if [ $OS == "Darwin" ]; then
     # MacPorts
     export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 fi
-
-source ~/.bashrc.ip
