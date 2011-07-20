@@ -130,10 +130,10 @@ if [ $OS == "Linux" ]; then
 fi
 
 # Python stuff
-if [ $OS == "Darwin" ]; then
-    export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-    export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/site-packages:~/apps/emacs/rope/ropemacs"
-fi
+#if [ $OS == "Darwin" ]; then
+#    export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+#    export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/site-packages:~/apps/emacs/rope/ropemacs"
+#fi
 
 # Mercurial Stuff
 umask 002
@@ -161,21 +161,21 @@ fi
 # Open in existing frame
 if [ $OS == "Darwin" ]; then
     export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:${PATH}"
-    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs23.app/Contents/MacOS/Emacs"
+    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
 elif [ $OS == "Linux" ]; then
     alias ec="emacsclient -n  -a emacs"
 fi
 
 # Open in terminal
 if [ $OS == "Darwin" ]; then
-    alias et="/Applications/Emacs23.app/Contents/MacOS/bin/emascclient -t -a /Applications/Emacs23.app/Contents/MacOS/Emacs -nw"
+    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emascclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 elif [ $OS == "Linux" ]; then
     alias et="emacsclient -t -a emacs -nw"
 fi
 
 # Open in new frame
 if [ $OS == "Darwin" ]; then
-    alias ef="/Applications/Emacs23.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs23.app/Contents/MacOS/Emacs"
+    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
 elif [ $OS == "Linux" ]; then
     alias ef="emacsclient -n -c -a emacs"
 fi
@@ -223,9 +223,7 @@ elif [ $OS == "Linux" ]; then
 fi
 
 # Work path
-if [ $USER == "darcoleo" ]; then
-   export PATH=~/bin:~/apps:/usr/local/bin:/opt/firefox:$PATH
-fi
+export PATH=~/bin:~/apps:/usr/local/bin:$PATH
 
 # General Mac Stuff
 if [ $OS == "Darwin" ]; then

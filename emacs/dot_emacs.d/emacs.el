@@ -11,7 +11,7 @@
 (load "frame_title_bar_path.el")
 ; (load "~/.emacs.d/yes-no.el")
 (load "key-bindings.el")
-; (load "~/.emacs.d/tabs4.el")
+(load "~/.emacs.d/tabs4.el")
 ;(load "~/.emacs.d/init-python.el")
 (autoload 'python-mode "init-python.el" "Python mode" t)
 ; (load "~/.emacs.d/init-cc.el")
@@ -19,9 +19,9 @@
 ; (load "~/.emacs.d/recreate-killed-buffers.el")
 ; (load "~/.emacs.d/window.el")
 ;(load "~/.emacs.d/perl.el")
-(load "wombat.el")
+; (load "wombat.el")
 ;(add-to-list 'load-path "~/apps/emacs/yasnippet")
-(add-to-list 'load-path "~/apps/emacs/ecb")
+; (add-to-list 'load-path "~/apps/emacs/ecb")
 (require 'ido)
 (ido-mode t)
 
@@ -30,9 +30,9 @@
 (load-file "~/apps/emacs/cedet/common/cedet.elc")
 ;(require 'cedet)
 ;(semantic-mode 1)
-(global-ede-mode 1)
+;(global-ede-mode 1)
 ;(semantic-load-enable-code-helpers)
-(semantic-load-enable-gaudy-code-helpers)
+; (semantic-load-enable-gaudy-code-helpers)
 ;(sematic-load-enabled-all-exuberent-ctags-support)
 
 ;(load "~/.emacs.d/my-ecb.el")
@@ -58,8 +58,8 @@
 ;(global-set-key (kbd "<mouse-3>") 'mouse-buffer-menu)
 
 ;; make commenting easy ;)
-(global-set-key (kbd "M-#") 'comment-region)
-(global-set-key (kbd "C-#") 'comment-region)
+;(global-set-key (kbd "M-#") 'comment-region)
+;(global-set-key (kbd "C-#") 'comment-region)
 
 
 ; Use womat theme
@@ -79,8 +79,16 @@
 (line-number-mode 1)
 (column-number-mode 1)
 ;; To customize the background color
-(set-face-background 'hl-line "#330")  ;; Emacs 22 Only
+; (set-face-background 'hl-line "#330")  ;; Emacs 22 Only
 ;(set-face-background 'highlight "#330")  ;; Emacs 21 Only
+(set-background-color "black")
+(set-face-background 'default "black")
+(set-face-background 'region "black")
+(set-face-foreground 'default "white")
+(set-face-foreground 'region "gray60")
+(set-foreground-color "white")
+(set-cursor-color "red")
+; (set-foreground-color "white")
 
 
 ;'global-whitespace-mode
@@ -92,7 +100,7 @@
 
 
 ;(autoload 'whitespace-mode t)
-(global-set-key [backspace] 'delete-backward-char)
+;(global-set-key [backspace] 'delete-backward-char)
 
 ;(setq py-smart-indentation nil)
 ;                (setq py-indent-offset 4)
