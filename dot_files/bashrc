@@ -168,7 +168,7 @@ fi
 
 # Open in terminal
 if [ $OS == "Darwin" ]; then
-    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emascclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 elif [ $OS == "Linux" ]; then
     alias et="emacsclient -t -a emacs -nw"
 fi
