@@ -45,4 +45,4 @@
 (global-set-key [f12] 'revert-buffer)
 
 
-(global-set-key "\C-cz 'show-full-path)
+(global-set-key "\C-cz" 'show-full-path)
