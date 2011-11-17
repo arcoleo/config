@@ -1,0 +1,170 @@
+OS=`uname -s`
+HOST=`uname -n`
+
+# If not running interactively, don't do anything
+if [[ $OS == "Linux" ]]; then
+    [ -z "$PS1" ] && return
+fi
+
+if [[ $OS == "Linux" ]]; then
+    # don't put duplicate lines in the history. See bash(1) for more options
+    # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+    export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+    # ... or force ignoredups and ignorespace
+    export HISTCONTROL=ignoreboth
+fi
+
+# append to the history file, don't overwrite it
+if [[ $OS == "Linux" ]]; then
+    shopt -s histappend
+fi
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+if [[ $OS == "Linux" ]]; then
+    shopt -s checkwinsize
+fi
+
+# make less more friendly for non-text input files, see lesspipe(1)
+if [[ $OS == "Linux" ]]; then
+    [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+if [[ $OS == "Linux" ]]; then
+    case "$TERM" in
+        xterm-color) color_prompt=yes;;
+    esac
+fi
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+
+if [[ $OS == "Linux" ]]; then
+    if [[ -n "$force_color_prompt" ]]; then
+        if [[ -x /usr/bin/tput ]] && tput setaf 1 >&/dev/null; then
+            # We have color support; assume it's compliant with Ecma-48
+            # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+            # a case would tend to support setf rather than setaf.)
+            color_prompt=yes
+        else
+            color_prompt=
+        fi
+    fi
+fi
+
+unset color_prompt force_color_prompt
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+#if [ -f ~/.bash_aliases ]; then
+#    . ~/.bash_aliases
+#fi
+
+# enable color support of ls and also add handy aliases
+if [[ $OS == "Linux" ]]; then
+    if [[ -x /usr/bin/dircolors ]]; then
+        eval "`dircolors -b`"
+        alias ls='ls --color=auto'
+        #alias dir='dir --color=auto'
+        #alias vdir='vdir --color=auto'
+
+        #alias grep='grep --color=auto'
+        #alias fgrep='fgrep --color=auto'
+        #alias egrep='egrep --color=auto'
+    fi
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [[ $OS == "Linux" ]]; then
+    if [[ -f /etc/zsh_completion ]]; then
+        . /etc/zsh_completion
+    fi
+fi
+
+# Python stuff
+#if [ $OS == "Darwin" ]; then
+#    export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+#    export PYTHONPATH="/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/site-packages:~/apps/emacs/rope/ropemacs"
+#fi
+
+# Mercurial Stuff
+umask 002
+#hg_ps1() {
+#    hg prompt "{
+#{branch}}{ at {bookmark}} {status}" 2> /dev/null
+#}
+
+#export PS1='$(hg_ps1)\n'$PS1
+
+# Git Stuff
+export PATH=/usr/local/git/bin:$PATH
+
+# Java Stuff
+if [[ $OS == "Darwin" ]]; then
+    export JAVA_HOME=/Library/Java/Home
+    export CATALINA_HOME=/Library/Tomcat/Home
+elif [[ $OS == "Linux" ]]; then
+    export JAVA_HOME=/usr/lib/jvm/java-6-sun
+fi
+
+# Emacs Stuff
+
+# Open in existing frame
+if [[ $OS == "Darwin" ]]; then
+    export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:${PATH}"
+    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [[ $OS == "Linux" ]]; then
+    alias ec="emacsclient -n  -a emacs"
+fi
+
+# Open in terminal
+if [[ $OS == "Darwin" ]]; then
+    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+elif [[ $OS == "Linux" ]]; then
+    alias et="emacsclient -t -a emacs -nw"
+fi
+
+# Open in new frame
+if [[ $OS == "Darwin" ]]; then
+    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [[ $OS == "Linux" ]]; then
+    alias ef="emacsclient -n -c -a emacs"
+fi
+
+# ImageMagick
+if [[ $OS == "Darwin" ]]; then
+    export MAGICK_HOME="/Applications/ImageMagick-6.5.8"
+    export PATH=$PATH:/$MAGICK_HOME/bin
+    export DYLD_LIBRARY_PATH=$MAGICK_HOME/lib
+fi
+
+# Lucene
+if [[ $OS == "Darwin" ]]; then
+    export CLASSPATH=$CLASSPATH:"/Users/arcoleo/apps/lucene/lucene-core.jar"
+    export CLASSPATH=$CLASSPATH:"/Users/arcoleo/apps/lucene/lucene-demos.jar"
+elif [[ $OS == "Linux" ]]; then
+    export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-core.jar"
+    export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-demos.jar"
+fi
+
+# Work path
+export PATH=~/bin:~/apps:/usr/local/bin:$PATH
+
+# General Mac Stuff
+if [[ $OS == "Darwin" ]]; then
+    export CLICOLOR=1
+    export TERM=xterm-color
+    export COMMAND_MODE=unix2003
+    export PATH=$PATH:/usr/local/mysql/bin
+    
+    # MacPorts
+    export PATH=$PATH:/opt/local/bin:/opt/local/sbin
+fi
