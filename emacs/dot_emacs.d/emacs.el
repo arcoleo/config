@@ -24,7 +24,7 @@
 ; (add-to-list 'load-path "~/apps/emacs/ecb")
 (require 'ido)
 (ido-mode t)
-
+(setq linum-format "%d  ")
 ;(load "~/.emacs.d/my-autocomplete.el")
 
 (load-file "~/apps/emacs/cedet/common/cedet.elc")
@@ -68,7 +68,7 @@
 
 
 (require 'tramp)
-(setq tramp-default-method "ssh")
+(setq tramp-default-method "scp")
 
 
 ; auto update files
@@ -76,10 +76,10 @@
 
 ; high light current line
 (global-hl-line-mode 1)
-(line-number-mode 1)
+; (line-number-mode 1)
 (column-number-mode 1)
 ;; To customize the background color
-; (set-face-background 'hl-line "#330")  ;; Emacs 22 Only
+(set-face-background 'hl-line "#232")  ;; Emacs 22 Only
 ;(set-face-background 'highlight "#330")  ;; Emacs 21 Only
 (set-background-color "black")
 (set-face-background 'default "black")

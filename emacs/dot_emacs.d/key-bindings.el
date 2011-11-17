@@ -44,3 +44,5 @@
 (global-set-key [S-f7] 'next-error)
 (global-set-key [f12] 'revert-buffer)
 
+
+(global-set-key "\C-cz 'show-full-path)
