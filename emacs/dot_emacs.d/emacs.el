@@ -1,7 +1,7 @@
 (print "Loading emacs.el")
 ; how to determine platform / emacs version?
 (setq inhibit-splash-screen t)
-(tool-bar-mode -1)
+; (setq tool-bar-mode -1)
 
 
 (load "version.el")
@@ -27,7 +27,7 @@
 (setq linum-format "%d  ")
 ;(load "~/.emacs.d/my-autocomplete.el")
 
-(load-file "~/apps/emacs/cedet/common/cedet.elc")
+(load-file "~/apps/emacs_dir/cedet/common/cedet.elc")
 ;(require 'cedet)
 ;(semantic-mode 1)
 ;(global-ede-mode 1)
