@@ -1,5 +1,46 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="arrow"
+
+# For remote machines
+#ZSH_THEME="candy"
+ZSH_THEME="arcoleo"
+
+# No git info
+#ZSH_THEME="jtriley"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want disable red dots displayed while waiting for completion
+# DISABLE_COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(arcoleo osx)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
 OS=`uname -s`
 HOST=`uname -n`
+
+export PATH="~/apps:/usr/local/git/bin:$PATH"
 
 # If not running interactively, don't do anything
 if [[ $OS == "Linux" ]]; then
@@ -55,16 +96,18 @@ if [[ $OS == "Linux" ]]; then
     fi
 fi
 
-unset color_prompt force_color_prompt
+if [[ $OS == "Linux" ]]; then
+    unset color_prompt force_color_prompt
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
+if [[ -f ~/.zsh_aliases ]]; then
+    . ~/.zsh_aliases
+fi
 
 # enable color support of ls and also add handy aliases
 if [[ $OS == "Linux" ]]; then
@@ -83,11 +126,11 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [[ $OS == "Linux" ]]; then
-    if [[ -f /etc/zsh_completion ]]; then
-        . /etc/zsh_completion
-    fi
-fi
+#if [[ $OS == "Linux" ]]; then
+#    if [[ -f /etc/zsh_completion ]]; then
+#        . /etc/zsh_completion
+#    fi
+#fi
 
 # Python stuff
 #if [ $OS == "Darwin" ]; then
@@ -96,7 +139,7 @@ fi
 #fi
 
 # Mercurial Stuff
-umask 002
+#umask 002
 #hg_ps1() {
 #    hg prompt "{
 #{branch}}{ at {bookmark}} {status}" 2> /dev/null
@@ -105,7 +148,7 @@ umask 002
 #export PS1='$(hg_ps1)\n'$PS1
 
 # Git Stuff
-export PATH=/usr/local/git/bin:$PATH
+#export PATH=/usr/local/git/bin:$PATH
 
 # Java Stuff
 if [[ $OS == "Darwin" ]]; then
@@ -159,12 +202,12 @@ fi
 export PATH=~/bin:~/apps:/usr/local/bin:$PATH
 
 # General Mac Stuff
-if [[ $OS == "Darwin" ]]; then
-    export CLICOLOR=1
-    export TERM=xterm-color
-    export COMMAND_MODE=unix2003
-    export PATH=$PATH:/usr/local/mysql/bin
+#if [[ $OS == "Darwin" ]]; then
+#    export CLICOLOR=1
+#    export TERM=xterm-color
+#    export COMMAND_MODE=unix2003
+#    export PATH=$PATH:/usr/local/mysql/bin
     
     # MacPorts
-    export PATH=$PATH:/opt/local/bin:/opt/local/sbin
-fi
+#    export PATH=$PATH:/opt/local/bin:/opt/local/sbin
+#fi
