@@ -1,1 +1,4 @@
 Unison configuration scripts
+
+On Mac, these files should be linked to from ~/Library/Application Support/Unison
+
