@@ -1,0 +1,13 @@
+root = /Volumes/DataStore/Pictures/dsa_folder
+root = /Volumes/DSA500-FW800/Pictures/dsa_folder
+
+noupdate = /Volumes/DataStore/Pictures/dsa_folder
+force = /Volumes/DataStore/Pictures/dsa_folder
+
+
+logfile = dsa_folder.unison.log
+
+times = true
+ignore = Name .DS_Store
+ignore = Name *~
+

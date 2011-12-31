@@ -1,0 +1,12 @@
+root = /Users/arcoleo/Pictures/dsa_folder
+root = /Volumes/DataStore/Pictures/dsa_folder
+
+noupdate = /Users/arcoleo/Pictures/dsa_folder
+force = /Users/arcoleo/Pictures/dsa_folder
+
+logfile = dsa_folder.unison.log
+
+times = true
+ignore = Name .DS_Store
+ignore = Name *~
+
