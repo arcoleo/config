@@ -4,44 +4,54 @@
 ;(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 ;(add-to-list 'interpreter-mode-alist '("python" . python-mode))
 ;(require 'python-mode)
-(print "Loading init-python.el")
+;(print "Loading init-python.el")
 (require 'python)
+
+;'(py-pychecker-command "~/.emacs.d/pychecker.sh")
+;'(py-pychecker-command-args (quote ("")))
+;'(python-check-command "~/.emacs.d/pychecker.sh")
+
 ;(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-hook 'python-mode-hook
-      (lambda ()
-	(print "python-mode-hook")
-	(set-variable 'py-indent-offset 4)
-	(print "debug 1")
-	(set-variable 'indent-tabs-mode nil)
-	(print "debug 2")
-	(setq py-smart-indentation nil)
-	(print "debug 3")
-	(setq py-indent-offset 4)
-	(print "debug 4")
-    	(setq py-continuation-offset 0)
-	(print "debug 5")
-	(define-key python-mode-map (kbd "RET") 'newline-and-indent)
-	(print "debug 6")
-	; (smart-operator-mode-on)
-	(print "debug 7")
-	(print "End python-mode-hook")
-	))
-(print "Debug")    
+;(add-hook 'python-mode-hook
+;    (lambda ()
+;    (set-variable 'py-indent-offset 4)
+;    (set-variable 'indent-tabs-mode nil)
+;    (setq py-smart-indentation nil)
+;    (setq py-indent-offset 4)
+;    (setq py-continuation-offset 0)
+;    (define-key python-mode-map (kbd "RET") 'newline-and-indent)
+    ; (smart-operator-mode-on)
+;))
+; (print "Debug")    
 ;; pymacs
-(setenv "PYMACS_PYTHON" "python2.6") 
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
+;(setenv "PYMACS_PYTHON" "python2.6") 
+;(autoload 'pymacs-apply "pymacs")
+;(autoload 'pymacs-call "pymacs")
+;(autoload 'pymacs-eval "pymacs" nil t)
+;(autoload 'pymacs-exec "pymacs" nil t)
+;(autoload 'pymacs-load "pymacs" nil t)
 ;(eval-after-load "pymacs"
 ;    '(add-to-list 'load-path "~/apps/emacs/rope/ropemacs")
 ;)
 ;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
 
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t)
+;(pymacs-load "ropemacs" "rope-")
+;(setq ropemacs-enable-autoimport t)
 
-(require 'ecb)
-(print "End init-python")
+;(require 'ecb)
+;(print "End init-python")
 
+
+(when (load "flymake" t)
+         (defun flymake-pyflakes-init ()
+           (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                              'flymake-create-temp-inplace))
+              (local-file (file-relative-name
+                           temp-file
+                           (file-name-directory buffer-file-name))))
+             (list "pyflakes" (list local-file))))
+ 
+         (add-to-list 'flymake-allowed-file-name-masks
+                  '("\\.py\\'" flymake-pyflakes-init)))
+ 
+   (add-hook 'find-file-hook 'flymake-find-file-hook)

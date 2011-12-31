@@ -6,16 +6,16 @@
 
 (load "version.el")
 (load "os.el")
-; (load "~/.emacs.d/backups.el")
+(load "backups.el")
 ; (load "~/.emacs.d/font.el")
 (load "frame_title_bar_path.el")
-; (load "~/.emacs.d/yes-no.el")
+(load "yes-no.el")
 (load "key-bindings.el")
-(load "~/.emacs.d/tabs4.el")
-;(load "~/.emacs.d/init-python.el")
+(load "tabs4.el")
+(load "~/.emacs.d/init-python.el")
 (autoload 'python-mode "init-python.el" "Python mode" t)
 ; (load "~/.emacs.d/init-cc.el")
-; (load "~/.emacs.d/searching.el")
+(load "~/.emacs.d/searching.el")
 ; (load "~/.emacs.d/recreate-killed-buffers.el")
 ; (load "~/.emacs.d/window.el")
 ;(load "~/.emacs.d/perl.el")
@@ -25,9 +25,16 @@
 (require 'ido)
 (ido-mode t)
 (setq linum-format "%d  ")
-;(load "~/.emacs.d/my-autocomplete.el")
+;(load "~/my-autocomplete.el")
 
-(load-file "~/apps/emacs_dir/cedet/common/cedet.elc")
+
+
+
+
+
+
+
+;(load-file "~/apps/emacs_dir/cedet/common/cedet.elc")
 ;(require 'cedet)
 ;(semantic-mode 1)
 ;(global-ede-mode 1)
@@ -81,14 +88,17 @@
 ;; To customize the background color
 (set-face-background 'hl-line "#232")  ;; Emacs 22 Only
 ;(set-face-background 'highlight "#330")  ;; Emacs 21 Only
-(set-background-color "black")
-(set-face-background 'default "black")
-(set-face-background 'region "black")
-(set-face-foreground 'default "white")
-(set-face-foreground 'region "gray60")
-(set-foreground-color "white")
-(set-cursor-color "red")
+;(set-background-color "black")
+;(set-face-background 'default "black")
+;(set-face-background 'region "black")
+;(set-face-foreground 'default "white")
+;(set-face-foreground 'region "gray60")
+;(set-foreground-color "white")
+;(set-cursor-color "red")
 ; (set-foreground-color "white")
+
+; aquamacs
+
 
 
 ;'global-whitespace-mode
