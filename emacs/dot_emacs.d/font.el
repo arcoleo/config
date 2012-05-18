@@ -17,7 +17,7 @@
 (if (system-type-is-gnu)
     (setq default-frame-alist
     (append default-frame-alist
-    '((font . "Inconsolata-12")
+    '((font . "Inconsolata-11")
 ))))
 
 (when (featurep 'aquamacs)
