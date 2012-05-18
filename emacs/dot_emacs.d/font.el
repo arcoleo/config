@@ -1,13 +1,3 @@
-;(setq default-frame-alist
-;   (append default-frame-alist
-;   '((font . "Inconsolata-10")
-;)))
-
-;(set-default-font "Bitstream Vera Sans Mono-9")
-;(set-default-font "Monaco-9")
-;(set-default-font "Monospace-10")
-;(set-default-font "Inconsolata-10")
-
 (if (system-type-is-darwin)
     (setq default-frame-alist
     (append default-frame-alist
