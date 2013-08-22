@@ -13,6 +13,14 @@
 (load "key-bindings.el")
 (load "tabs4.el")
 
+(if (not (featurep 'aquamacs))
+    (progn
+        (load "tabbar.el")
+        (tabbar-mode)
+    )
+)
+
+
 (add-hook 'python-mode-hook "init-python.el" "Python mode" t)
 
 ; (load "~/.emacs.d/init-cc.el")

@@ -10,6 +10,6 @@
     '((font . "Inconsolata-11")
 ))))
 
-(when (featurep 'aquamacs)
-    (set-default-font "-apple-inconsolata-medium-r-normal--13-130-72-72-m-130-iso10646-1")
-)
+;(when (featurep 'aquamacs)
+;    (set-default-font "-apple-inconsolata-medium-r-normal--13-130-72-72-m-130-iso10646-1")
+;)
