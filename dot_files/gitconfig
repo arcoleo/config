@@ -1,9 +1,31 @@
 [user]
-	name = David Arcoleo
-	email = david@arcoleo.org
-[giggle]
-	main-window-maximized = false
-	main-window-geometry = 698x667+366+33
-	main-window-view = HistoryView
-	history-view-vpane-position = 466
-	file-view-vpane-position = 596
+    name = David Arcoleo
+    email = david@arcoleo.org
+
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    nbr = checkout -b
+    pu = push
+    pl = pull --no-commit
+    brr = !git branch && git push -u origin
+
+[color]
+    ui = true
+
+[push]
+    default = simple
+
+[core]
+    pager = less -FRSX
+    excludesfile = /Users/david/.gitignore_global
+
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
