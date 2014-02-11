@@ -10,7 +10,8 @@
     nbr = checkout -b
     pu = push
     pl = pull --no-commit
-    brr = !git branch && git push -u origin
+    brr = "!sh -c 'git branch $1 && git push -u origin $1' -"
+    brd = "!sh -c 'git branch -d $1 && git push origin --delete $1' -"
 
 [color]
     ui = true
