@@ -1,6 +1,6 @@
 [user]
     name = David Arcoleo
-    email = david@arcoleo.org
+    email = darcoleo@splunk.com
 
 [alias]
     st = status
@@ -21,7 +21,7 @@
 
 [core]
     pager = less -FRSX
-    excludesfile = /Users/david/.gitignore_global
+    excludesfile = /Users/darcoleo/.gitignore_global
 
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
