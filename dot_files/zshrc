@@ -1,113 +1,178 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="arrow"
+ZSH_THEME="candy"
 
-# For remote machines
-#ZSH_THEME="candy"
-ZSH_THEME="arcoleo"
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# No git info
-#ZSH_THEME="jtriley"
-
-# Set to this to use case-sensitive completion
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
+# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want disable red dots displayed while waiting for completion
-# DISABLE_COMPLETION_WAITING_DOTS="true"
+# Uncomment the following line to disable command auto-correction.
+# DISABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(arcoleo osx)
+plugins=(git osx)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# ---- User configuration ----
+
 OS=`uname -s`
 HOST=`uname -n`
 
-export PATH="~/apps:/usr/local/git/bin:$PATH"
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+if [[ -f ~/.zsh_aliases ]]; then
+    . ~/.zsh_aliases
+fi
+
+
+# Emacs Stuff
+
+# Open in existing frame
+if [[ $OS == "Darwin" ]]; then
+    export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:${PATH}"
+    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [[ $OS == "Linux" ]]; then
+    alias ec="emacsclient -n  -a emacs"
+fi
+
+# Open in terminal
+if [[ $OS == "Darwin" ]]; then
+    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+elif [[ $OS == "Linux" ]]; then
+    alias et="emacsclient -t -a emacs -nw"
+fi
+
+# Open in new frame
+if [[ $OS == "Darwin" ]]; then
+    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [[ $OS == "Linux" ]]; then
+    alias ef="emacsclient -n -c -a emacs"
+fi
+
+# ---------------------------
+
+
 
 # If not running interactively, don't do anything
-if [[ $OS == "Linux" ]]; then
-    [ -z "$PS1" ] && return
-fi
-
-if [[ $OS == "Linux" ]]; then
-    # don't put duplicate lines in the history. See bash(1) for more options
-    # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
-    export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
-    # ... or force ignoredups and ignorespace
-    export HISTCONTROL=ignoreboth
-fi
+#if [[ $OS == "Linux" ]]; then
+#    [ -z "$PS1" ] && return
+#fi
+#
+#if [[ $OS == "Linux" ]]; then
+#    # don't put duplicate lines in the history. See bash(1) for more options
+#    # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
+#    export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+#    # ... or force ignoredups and ignorespace
+#    export HISTCONTROL=ignoreboth
+#fi
 
 # append to the history file, don't overwrite it
-if [[ $OS == "Linux" ]]; then
-    shopt -s histappend
-fi
+#if [[ $OS == "Linux" ]]; then
+#    shopt -s histappend
+#fi
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-if [[ $OS == "Linux" ]]; then
-    shopt -s checkwinsize
-fi
+#if [[ $OS == "Linux" ]]; then
+#    shopt -s checkwinsize
+#fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
-if [[ $OS == "Linux" ]]; then
-    [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-fi
+#if [[ $OS == "Linux" ]]; then
+#    [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-if [[ $OS == "Linux" ]]; then
-    case "$TERM" in
-        xterm-color) color_prompt=yes;;
-    esac
-fi
+#if [[ $OS == "Linux" ]]; then
+#    case "$TERM" in
+#        xterm-color) color_prompt=yes;;
+#    esac
+#fi
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+#force_color_prompt=yes
 
-if [[ $OS == "Linux" ]]; then
-    if [[ -n "$force_color_prompt" ]]; then
-        if [[ -x /usr/bin/tput ]] && tput setaf 1 >&/dev/null; then
-            # We have color support; assume it's compliant with Ecma-48
-            # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-            # a case would tend to support setf rather than setaf.)
-            color_prompt=yes
-        else
-            color_prompt=
-        fi
-    fi
-fi
+#if [[ $OS == "Linux" ]]; then
+#    if [[ -n "$force_color_prompt" ]]; then
+#        if [[ -x /usr/bin/tput ]] && tput setaf 1 >&/dev/null; then
+#            # We have color support; assume it's compliant with Ecma-48
+#            # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+#            # a case would tend to support setf rather than setaf.)
+#            color_prompt=yes
+#        else
+#            color_prompt=
+#        fi
+#    fi
+#fi
 
-if [[ $OS == "Linux" ]]; then
-    unset color_prompt force_color_prompt
-fi
+#if [[ $OS == "Linux" ]]; then
+#    unset color_prompt force_color_prompt
+#fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [[ -f ~/.zsh_aliases ]]; then
-    . ~/.zsh_aliases
-fi
 
 # enable color support of ls and also add handy aliases
 if [[ $OS == "Linux" ]]; then
@@ -151,55 +216,29 @@ fi
 #export PATH=/usr/local/git/bin:$PATH
 
 # Java Stuff
-if [[ $OS == "Darwin" ]]; then
-    export JAVA_HOME=/Library/Java/Home
-    export CATALINA_HOME=/Library/Tomcat/Home
-elif [[ $OS == "Linux" ]]; then
-    export JAVA_HOME=/usr/lib/jvm/java-6-sun
-fi
+#if [[ $OS == "Darwin" ]]; then
+#    export JAVA_HOME=/Library/Java/Home
+#    export CATALINA_HOME=/Library/Tomcat/Home
+#elif [[ $OS == "Linux" ]]; then
+#    export JAVA_HOME=/usr/lib/jvm/java-6-sun
+#fi
 
-# Emacs Stuff
-
-# Open in existing frame
-if [[ $OS == "Darwin" ]]; then
-    export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:${PATH}"
-    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
-elif [[ $OS == "Linux" ]]; then
-    alias ec="emacsclient -n  -a emacs"
-fi
-
-# Open in terminal
-if [[ $OS == "Darwin" ]]; then
-    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-elif [[ $OS == "Linux" ]]; then
-    alias et="emacsclient -t -a emacs -nw"
-fi
-
-# Open in new frame
-if [[ $OS == "Darwin" ]]; then
-    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
-elif [[ $OS == "Linux" ]]; then
-    alias ef="emacsclient -n -c -a emacs"
-fi
 
 # ImageMagick
-if [[ $OS == "Darwin" ]]; then
-    export MAGICK_HOME="/Applications/ImageMagick-6.5.8"
-    export PATH=$PATH:/$MAGICK_HOME/bin
-    export DYLD_LIBRARY_PATH=$MAGICK_HOME/lib
-fi
+#if [[ $OS == "Darwin" ]]; then
+#    export MAGICK_HOME="/Applications/ImageMagick-6.5.8"
+#    export PATH=$PATH:/$MAGICK_HOME/bin
+#    export DYLD_LIBRARY_PATH=$MAGICK_HOME/lib
+#fi
 
 # Lucene
-if [[ $OS == "Darwin" ]]; then
-    export CLASSPATH=$CLASSPATH:"/Users/arcoleo/apps/lucene/lucene-core.jar"
-    export CLASSPATH=$CLASSPATH:"/Users/arcoleo/apps/lucene/lucene-demos.jar"
-elif [[ $OS == "Linux" ]]; then
-    export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-core.jar"
-    export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-demos.jar"
-fi
-
-# Work path
-export PATH=~/bin:~/apps:/usr/local/bin:$PATH
+#if [[ $OS == "Darwin" ]]; then
+#    export CLASSPATH=$CLASSPATH:"/Users/arcoleo/apps/lucene/lucene-core.jar"
+#    export CLASSPATH=$CLASSPATH:"/Users/arcoleo/apps/lucene/lucene-demos.jar"
+#elif [[ $OS == "Linux" ]]; then
+#    export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-core.jar"
+#    export CLASSPATH=$CLASSPATH:"/home/arcoleo/apps/lucene/lucene-demos.jar"
+#fi
 
 # General Mac Stuff
 #if [[ $OS == "Darwin" ]]; then
