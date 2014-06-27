@@ -9,8 +9,6 @@
 .DS_Store
 .project
 .pydevproject
-.settings/
-/work/
 TAGS
 *elc
 
