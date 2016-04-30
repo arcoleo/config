@@ -6,7 +6,7 @@
 
 
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.rbenv/versions/1.9.3-p545/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.rbenv/versions/1.9.3-p545/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Path to your oh-my-zsh installation.
