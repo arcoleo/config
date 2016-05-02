@@ -1,0 +1,3 @@
+alias cloud-a="cd ~/cloud; source cloud-ops/conf/setup_ansible -s"
+alias cloud-b="cd ~/cloud-b; source cloud-ops/conf/setup_ansible -s"
+alias f="find . -name"
