@@ -91,6 +91,8 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=~/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+
 export HISTFILE=~/Dropbox/config/zsh_history
 
 eval "$(rbenv init - --no-rehash)"
@@ -104,3 +106,5 @@ source ~/.zsh_alias
 #unsetopt xtrace
 # restore stderr to the value saved in FD 3
 #exec 2>&3 3>&-
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
