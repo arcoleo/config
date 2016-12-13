@@ -1,4 +1,4 @@
-export PATH="~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.rbenv/versions/1.9.3-p545/bin"
+export PATH="~/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.rbenv/versions/1.9.3-p545/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Path to your oh-my-zsh installation.
@@ -91,4 +91,3 @@ export HISTFILE=~/Dropbox/config/zsh_history
 
 eval "$(rbenv init - --no-rehash)"
 source ~/.zsh_alias
-
