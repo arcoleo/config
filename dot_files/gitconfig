@@ -1,6 +1,6 @@
 [user]
-    name = David Arcoleo
-    email = darcoleo@splunk.com
+	name = David Arcoleo
+	email = david@arcoleo.org
 
 [alias]
     st = status
