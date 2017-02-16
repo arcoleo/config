@@ -1,4 +1,12 @@
-export PATH="~/.bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.rbenv/versions/1.9.3-p545/bin"
+#zmodload zsh/datetime
+#setopt promptsubst
+#PS4='+$EPOCHREALTIME %N:%i> '
+#exec 3>&2 2>/tmp/startlog.$$
+#setopt xtrace prompt_subst
+
+
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.rbenv/versions/1.9.3-p545/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Path to your oh-my-zsh installation.
@@ -50,19 +58,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git cp extract history jira jsontools sublime)
+plugins=(git)
 
 # User configuration
-export JIRA_URL="https://jira.splunk.com"
-export JIRA_PREFIX="AMI-"
-export JIRA_NAME="darcoleo"
-export JIRA_RAPID_BOARD=true
-export JIRA_DEFAULT_ACTION="dashboard"
-
-
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 
 source $ZSH/oh-my-zsh.sh
@@ -92,7 +90,21 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH=~/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+
 export HISTFILE=~/Dropbox/config/zsh_history
 
 eval "$(rbenv init - --no-rehash)"
 source ~/.zsh_alias
+
+
+
+
+
+# turn off tracing
+#unsetopt xtrace
+# restore stderr to the value saved in FD 3
+#exec 2>&3 3>&-
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
