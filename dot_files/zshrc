@@ -62,6 +62,9 @@ export JIRA_DEFAULT_ACTION="dashboard"
 
 source $ZSH/oh-my-zsh.sh
 
+# AsciiDoc
+export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -87,7 +90,11 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export HISTSIZE=10000000
+export SAVEHIST=$HISTSIZE
 export HISTFILE=~/Dropbox/config/zsh_history
+# prevent entires from being recorded by preceding them with at least one space
+setopt hist_ignore_space
 
 eval "$(rbenv init - --no-rehash)"
 source ~/.zsh_alias

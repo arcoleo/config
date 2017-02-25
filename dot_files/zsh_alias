@@ -1,6 +1,6 @@
 alias cloud-a="cd ~/cloud; source cloud-ops/conf/setup_ansible -s"
 alias cloud-a2="cd ~/cloud2; source cloud-ops/conf/setup_ansible -s"
-alias cloud-b="cd ~/cloud-b; source cloud-ops/conf/setup_ansible -s"
+alias cloud-b="cd ~/repo/bitbucket/gitplay; source stackmakr_rfg/conf/setup_env -s"
 alias f="find . -name"
 
 alias exec21="ssh corp-exec21.stackmakr-corp-v2-2.splunkcloud.com"
