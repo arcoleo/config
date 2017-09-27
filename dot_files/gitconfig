@@ -1,6 +1,6 @@
 [user]
 	name = David Arcoleo
-	email = david@arcoleo.org
+	email = darcoleo@splunk.com
 
 [alias]
     st = status
@@ -20,6 +20,7 @@
 
 [push]
     default = simple
+	followTags = true
 
 [core]
     pager = less -FRSX
@@ -33,3 +34,5 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
+[commit]
+	template = /Users/darcoleo/.stCommitMsg
