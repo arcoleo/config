@@ -1,0 +1,7 @@
+# $1 - destroy
+
+terraform plan $1 -out=terraform.tfplan 
+#  -var "do_token=2da964e9ecf236720b2ff4adefda007cb81960f21de09495788e11433d157e58" \
+#  -var "pub_key=$HOME/.ssh/id_rsa_do.pub" \
+#  -var "pvt_key=$HOME/.ssh/id_rsa_do" \
+#  -var "ssh_fingerprint=27:29:4a:b1:4e:4b:73:23:dc:8d:37:7a:e9:ff:bc:37"
