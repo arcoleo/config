@@ -4,10 +4,10 @@
 # }
 
 # public DigitalOcean SSH key
-resource "digitalocean_ssh_key" "default" {
-  name       = "Terraform Example"
-  public_key = "${file(var.pub_key)}"
-}
+# resource "digitalocean_ssh_key" "default" {
+#   name       = "Terraform Example"
+#   public_key = "${file(var.pub_key)}"
+# }
 
 # setup one small virtual server in Frankfurt.
 resource "digitalocean_droplet" "wiki" {
@@ -36,7 +36,7 @@ resource "digitalocean_droplet" "wiki" {
     inline = [
       "export PATH=$PATH:/usr/bin",
 
-      # install nginx
+      "add-apt-repository ppa:openjdk-r/ppa",
       "apt-get update",
 
       # install salt-minion and salt-master, but don't start services
@@ -50,29 +50,14 @@ resource "digitalocean_droplet" "wiki" {
     # "cat /tmp/complete-bootstrap.sh | sh -s",
   }
 
-  provisioner "file" {
-    source      = "salt/salt.master"
-    destination = "/etc/salt/master"
-  }
 
   provisioner "file" {
     source      = "salt/salt.minion"
     destination = "/etc/salt/minion"
   }
 
-  provisioner "file" {
-    source      = "salt/nettools.sls"
-    destination = "/srv/salt/nettools.sls"
-  }
-
-  provisioner "file" {
-    source      = "salt/examples.sls"
-    destination = "/srv/salt/examples.sls"
-  }
-
   provisioner "remote-exec" {
     inline = [
-      "service salt-master restart",
       "service salt-minion restart",
     ]
   }

@@ -3,21 +3,13 @@
 #   token = "${var.do_token}"
 # }
 
-# Fingerprint of the key, just to have it at hand. Please exchange it with your key
-# "c8:df:df:...:d9:41:ce"
-# public DigitalOcean SSH key
-resource "digitalocean_ssh_key" "default" {
-  name       = "Terraform Example"
-  public_key = "${file(var.pub_key)}"
-}
-
 # setup one small virtual server in Frankfurt.
 resource "digitalocean_droplet" "master" {
   image        = 21669205
   name         = "salt"
   region       = "sfo1"
   size         = "1gb"
-  ipv4_address = "138.68.193.160"
+  # ipv4_address = "138.68.193.160"
 
   # install this SSH key on the machine so we can access it later
   ssh_keys = [
@@ -39,7 +31,6 @@ resource "digitalocean_droplet" "master" {
     inline = [
       "export PATH=$PATH:/usr/bin",
 
-      # install nginx
       "apt-get update",
 
       # install salt-minion and salt-master, but don't start services
@@ -72,6 +63,12 @@ resource "digitalocean_droplet" "master" {
     source      = "salt/examples.sls"
     destination = "/srv/salt/examples.sls"
   }
+
+  provisioner "file" {
+    source = "salt/java.sls"
+    destination = "/srv/java.sls"
+  }
+
 
   provisioner "remote-exec" {
     inline = [

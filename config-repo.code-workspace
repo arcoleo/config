@@ -3,5 +3,8 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"python.pythonPath": "/Users/darcoleo/venv/saltstack/bin/python3"
+	}
 }
