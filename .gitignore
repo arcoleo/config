@@ -1,4 +1,7 @@
 .saves*
 *~
 *#
-
+*.tfstate
+*.backup
+.terraform
+*.tfplan
