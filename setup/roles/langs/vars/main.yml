@@ -6,3 +6,7 @@ langs_brew_packages:
   - name: ocaml
   - name: java
   - name: julia
+
+  erlang_brew_packages:
+  - name: erlang
+  - name: rebar3

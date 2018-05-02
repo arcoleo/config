@@ -51,27 +51,25 @@ brew_base_packages:
   - name: yarn
   - name: zeromq
 brew_cask_applications:
-  - name: alfred
+  # - name: alfred
   - name: appzapper
-  - name: atom
-    install_options: "--force"
-  - name: bartender
+  # - name: atom
+  #   install_options: "--force"
+  # - name: bartender
   # - name: caffeine
   # - name: cloak
   # - name: firefox
-  - name: flux
+  # - name: flux
   # - name: google-chrome
   # - name: google-cloud-sdk
   # - name: google-hangouts
   # - name: gpgtools
-  - name: harvest
-    install_options: "--force"
-  - name: imagealpha
-  - name: imageoptim
+  # - name: harvest
+  #   install_options: "--force"
+  # - name: imagealpha
+  # - name: imageoptim
   # - name: insomniax
   # - name: istat-menus
-  - name: iterm2
-
   # - name: keybase
   # - name: keyboardcleantool
   # - name: little-snitch
@@ -79,10 +77,10 @@ brew_cask_applications:
   # - name: minikube
     # install_options: "--force"
   # - name: spotify
-  - name: sublime-text
-  - name: the-unarchiver
-  - name: time-out
-  - name: torbrowser
+  # - name: sublime-text
+  # - name: the-unarchiver
+  # - name: time-out
+  # - name: torbrowser
   - name: tunnelblick
   # - name: viscosity
   # - name: vmware-fusion

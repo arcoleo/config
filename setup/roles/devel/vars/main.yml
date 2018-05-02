@@ -1,6 +1,11 @@
 ---
 
 devel_brew_packages:
+  - name: autoconf
+  - name: automake
+  - name: cmake
+  - name: ctags
+  - name: makedepend
   - name: git
     install_options: "with-gettext,with-pcre,with-persistent-https,with-blk-sha1"
   - name: git-extras
@@ -12,11 +17,6 @@ devel_brew_packages:
   - name: vagrant
   - name: virtualbox
   - name: bazaar
-  - name: autoconf
-  - name: automake
-  - name: cmake
-  - name: ctags
   - name: hub
-  - name: makedepend
   - name: mercurial
 

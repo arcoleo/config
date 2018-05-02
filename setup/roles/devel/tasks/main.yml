@@ -1,0 +1,12 @@
+---
+
+- name: Install devel brew packages
+  homebrew:
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ devel_brew_packages }}"
+  tags:
+    - devel
+    - brew
+

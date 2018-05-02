@@ -1,7 +1,7 @@
 all_dirs = $(shell echo "roles/$(role)/{defaults,files,handlers,library,meta,tasks,templates,vars}")
 main_dirs = $(shell echo "roles/$(role)/{defaults,handlers,meta,tasks,vars}")
 
-all: bootstrap provision
+# all: bootstrap provision
 
 bootstrap:
 	@echo "-----> Running setup script"

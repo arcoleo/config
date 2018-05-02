@@ -79,3 +79,10 @@
     state: directory
   tags:
     - base
+
+- name: bin dir
+  file:
+    path: "{{ home_dir }}/bin"
+    state: directory
+  tags:
+    - base
