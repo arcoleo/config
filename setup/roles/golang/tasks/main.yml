@@ -2,15 +2,25 @@
 
 - name: Install golang via homebrew
   homebrew:
-    name: go
-    install_options: "{{ golang_brew_options }}"
-    state: latest
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: present
+  with_items: "{{ golang_brew_packages }}"
   tags:
+    - golang
     - brew
+
+- name: go base path
+  file:
+    path: "{{ gopath_dir }}"
+    state: directory
+  tags:
     - golang
 
 - name: Go path dirs
-  command: "mkdir -p {{ gopath_dir}}/{{ item }}"
+  file:
+    path: "{{ gopath_dir }}/{{ item }}"
+    state: directory
   with_items:
     - src
     - pkg

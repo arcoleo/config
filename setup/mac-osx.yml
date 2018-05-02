@@ -5,14 +5,17 @@
   gather_facts: false
   roles:
     - base
-    - tmux
+    - databases
+    - devel
+    - docker
     - dotfiles
-    - vimfiles
-    - ruby
-    - erlang
     - elixir
     - golang
-    - rust
+    - langs
     - nodejs
     - python
-    - docker
+    - ruby
+    - rust
+    - shell
+    - tmux
+    - vimfiles

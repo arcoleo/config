@@ -1,5 +1,5 @@
 ---
-- name: Install brew packages
+- name: Install shell brew packages
   homebrew:
     name: "{{ item.name }}"
     install_options: "{{ item.install_options | default('') }}"

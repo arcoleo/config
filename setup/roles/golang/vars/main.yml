@@ -1,7 +1,16 @@
 ---
 
-golang_brew_options: "with-cc-all"
-gopath_dir: "{{ workspace_dir }}/go"
+# golang_brew_options: "with-cc-all"
+gopath_dir: "{{ home_dir }}/go"
+
+golang_brew_packages:
+  - name: go
+    install_options: "with-cc-all"
+  - name: goenv
+
+  # - name: atom
+  #   install_options: "--force"
+  
 golang_default_packages:
   # Golang tools
   - golang.org/x/tools/cmd/goimports

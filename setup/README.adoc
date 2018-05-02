@@ -2,9 +2,7 @@
   David Arcoleo
 :toc:
 
-== Basics
-
-=== Apple Dev Tools
+== Apple Dev Tools
 
 Install Xcode
 
@@ -15,49 +13,10 @@ Install Apple's command-line tools
 $ xcode-select --install
 ----
 
-=== Brew
+== Setup
 
-Install Brew
-
-https://brew.sh/
-
-Install some basics
-
-[source,bash]
 ----
-$ brew install pcre xz pixz rsync the_silver_searcher tmux wget terraform sqlite readline rbenv openssl zsh python python3 jq go 
-----
-
-=== Shell
-
-==== Zsh
-
-Install oh-my-zsh
-
-https://github.com/robbyrussell/oh-my-zsh
-
-=== Python
-
-Upgrade pip
-
-[source,bash]
-----
-$ pip3 install --upgrade pip
-----
-
-Create general venv
-
-[source,bash]
-----
-$ mkdir ~/venv
-$ python3 -m venv ~/venv/general
+$ cd arcoleo/config/setup
+$ make boostrap
 $ source ~/venv/general/bin/activate
-(general) $
-----
-
-== Automated Rest of It
-
-[source,bash]
-----
-(general) $ ansible-galaxy install -r requirements.yml
 ----

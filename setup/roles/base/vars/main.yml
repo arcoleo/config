@@ -4,52 +4,52 @@ brew_install_cmd: "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Home
 brew_bin: "/usr/local/bin/brew"
 brew_cask_bin: "/usr/local/bin/brew-cask"
 brew_base_packages:
-  - name: certbot
-  - name: cmatrix
-  - name: coreutils
-  - name: cscope
-  - name: curl
-  - name: exercism
-  - name: findutils
-  - name: fn
-  - name: fontconfig
-  - name: freetype
-  - name: fswatch
-  - name: gettext
-  - name: goenv
-  - name: gnu-sed
-  - name: gnu-tar
-  - name: graphviz
-  - name: hadolint
-  - name: heroku-toolbelt
-  - name: jq
-  - name: kubectl
-  - name: libevent
-  - name: libffi
-  - name: libidn
-  - name: libmemcached
-  - name: libmpc
-  - name: libpng
-  - name: libxml2
-  - name: libyaml
-  - name: lorem
-  - name: memcached
-  - name: moreutils
-  - name: nomad
-  - name: opam
-  - name: phantomjs
-  - name: python3
-  - name: readline
-  - name: snappy
-  - name: swiftlint
-  - name: the_silver_searcher
-  - name: tree
-  - name: vault
-  - name: watchman
-  - name: wget
-  - name: xhyve
-  - name: yarn
-  - name: zeromq
+  - certbot
+  - cmatrix
+  - coreutils
+  - cscope
+  - curl
+  - exercism
+  - findutils
+  - fn
+  - fontconfig
+  - freetype
+  - fswatch
+  - gettext
+  - gnu-sed
+  - gnu-tar
+  - graphviz
+  - hadolint
+  - heroku-toolbelt
+  - jq
+  - kubectl
+  - libevent
+  - libffi
+  - libidn
+  - libmemcached
+  - libmpc
+  - libpng
+  - libxml2
+  - libyaml
+  - lorem
+  - memcached
+  - moreutils
+  - nomad
+  - opam
+  - phantomjs
+  - python3
+  - readline
+  - snappy
+  - swiftlint
+  - the_silver_searcher
+  - tree
+  - vault
+  - watchman
+  - wget
+  - xhyve
+  - yarn
+  - zeromq
+
 brew_cask_applications:
   # - name: alfred
   - name: appzapper
@@ -89,4 +89,4 @@ brew_cask_applications:
   # - name: youll-never-take-me-alive
 brew_taps:
   - name: caskroom/versions
-  - name: homebrew/science
+  # - name: homebrew/science

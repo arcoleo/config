@@ -7,6 +7,6 @@ langs_brew_packages:
   - name: java
   - name: julia
 
-  erlang_brew_packages:
+erlang_brew_packages:
   - name: erlang
   - name: rebar3
