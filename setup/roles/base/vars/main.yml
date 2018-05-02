@@ -1,0 +1,94 @@
+---
+
+brew_install_cmd: "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+brew_bin: "/usr/local/bin/brew"
+brew_cask_bin: "/usr/local/bin/brew-cask"
+brew_base_packages:
+  - name: certbot
+  - name: cmatrix
+  - name: coreutils
+  - name: cscope
+  - name: curl
+  - name: exercism
+  - name: findutils
+  - name: fn
+  - name: fontconfig
+  - name: freetype
+  - name: fswatch
+  - name: gettext
+  - name: goenv
+  - name: gnu-sed
+  - name: gnu-tar
+  - name: graphviz
+  - name: hadolint
+  - name: heroku-toolbelt
+  - name: jq
+  - name: kubectl
+  - name: libevent
+  - name: libffi
+  - name: libidn
+  - name: libmemcached
+  - name: libmpc
+  - name: libpng
+  - name: libxml2
+  - name: libyaml
+  - name: lorem
+  - name: memcached
+  - name: moreutils
+  - name: nomad
+  - name: opam
+  - name: phantomjs
+  - name: python3
+  - name: readline
+  - name: snappy
+  - name: swiftlint
+  - name: the_silver_searcher
+  - name: tree
+  - name: vault
+  - name: watchman
+  - name: wget
+  - name: xhyve
+  - name: yarn
+  - name: zeromq
+brew_cask_applications:
+  - name: alfred
+  - name: appzapper
+  - name: atom
+    install_options: "--force"
+  - name: bartender
+  # - name: caffeine
+  # - name: cloak
+  # - name: firefox
+  - name: flux
+  # - name: google-chrome
+  # - name: google-cloud-sdk
+  # - name: google-hangouts
+  # - name: gpgtools
+  - name: harvest
+    install_options: "--force"
+  - name: imagealpha
+  - name: imageoptim
+  # - name: insomniax
+  # - name: istat-menus
+  - name: iterm2
+
+  # - name: keybase
+  # - name: keyboardcleantool
+  # - name: little-snitch
+  # - name: macid
+  # - name: minikube
+    # install_options: "--force"
+  # - name: spotify
+  - name: sublime-text
+  - name: the-unarchiver
+  - name: time-out
+  - name: torbrowser
+  - name: tunnelblick
+  # - name: viscosity
+  # - name: vmware-fusion
+  - name: vlc
+  # - name: whatsapp
+  # - name: youll-never-take-me-alive
+brew_taps:
+  - name: caskroom/versions
+  - name: homebrew/science

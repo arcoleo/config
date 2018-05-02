@@ -1,0 +1,18 @@
+---
+
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - base
+    - tmux
+    - dotfiles
+    - vimfiles
+    - ruby
+    - erlang
+    - elixir
+    - golang
+    - rust
+    - nodejs
+    - python
+    - docker

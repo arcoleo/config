@@ -1,0 +1,7 @@
+---
+
+databases_brew_packages:
+  - name: postgres
+  - name: mysql
+  - name: redis
+  - name: sqlite

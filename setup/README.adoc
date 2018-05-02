@@ -1,5 +1,6 @@
 = Setting up the Mac
   David Arcoleo
+:toc:
 
 == Basics
 
@@ -9,7 +10,10 @@ Install Xcode
 
 Install Apple's command-line tools
 
+[source,bash]
+----
 $ xcode-select --install
+----
 
 === Brew
 
@@ -19,7 +23,10 @@ https://brew.sh/
 
 Install some basics
 
+[source,bash]
+----
 $ brew install pcre xz pixz rsync the_silver_searcher tmux wget terraform sqlite readline rbenv openssl zsh python python3 jq go 
+----
 
 === Shell
 
@@ -33,15 +40,24 @@ https://github.com/robbyrussell/oh-my-zsh
 
 Upgrade pip
 
+[source,bash]
+----
 $ pip3 install --upgrade pip
+----
 
 Create general venv
 
+[source,bash]
+----
 $ mkdir ~/venv
 $ python3 -m venv ~/venv/general
 $ source ~/venv/general/bin/activate
 (general) $
+----
 
-Install Ansible
+== Automated Rest of It
 
-(general) $ pip install ansible
+[source,bash]
+----
+(general) $ ansible-galaxy install -r requirements.yml
+----
