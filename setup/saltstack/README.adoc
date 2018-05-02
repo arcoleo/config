@@ -1,0 +1,10 @@
+= Managing w/ SaltStack
+  David Arcoleo
+:toc:
+
+== Setup
+
+----
+make boostrap
+sudo salt-master --config-dir=etc/salt --log-level=debug
+----
