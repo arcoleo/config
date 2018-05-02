@@ -1,0 +1,22 @@
+= Setting up the Mac
+  David Arcoleo
+:toc:
+
+== Apple Dev Tools
+
+Install Xcode
+
+Install Apple's command-line tools
+
+[source,bash]
+----
+$ xcode-select --install
+----
+
+== Setup
+
+----
+$ cd arcoleo/config/setup
+$ make boostrap
+$ source ~/venv/general/bin/activate
+----

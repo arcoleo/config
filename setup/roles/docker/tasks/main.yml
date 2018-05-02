@@ -1,0 +1,29 @@
+---
+
+- name: Install updated docker brew cask applications
+  command: "brew cask install {{ item.force | default('') }} {{ item.name }}"
+  with_items: "{{ docker_brew_cask_apps }}"
+  tags:
+    - brew
+    - brew-cask
+    - brew-cask-updates
+    - docker
+
+- name: Install docker homebrew packages
+  homebrew:
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ docker_brew_packages }}"
+  tags:
+    - brew
+    - docker
+
+- name: Remove old docker install script
+  file:
+    src: setup-docker.j2
+    dest: "{{ home_dir }}/bin/setup-docker"
+    mode: 0755
+    state: absent
+  tags:
+    - docker

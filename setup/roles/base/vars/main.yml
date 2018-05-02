@@ -1,0 +1,92 @@
+---
+
+brew_install_cmd: "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+brew_bin: "/usr/local/bin/brew"
+brew_cask_bin: "/usr/local/bin/brew-cask"
+brew_base_packages:
+  - certbot
+  - cmatrix
+  - coreutils
+  - cscope
+  - curl
+  - exercism
+  - findutils
+  - fn
+  - fontconfig
+  - freetype
+  - fswatch
+  - gettext
+  - gnu-sed
+  - gnu-tar
+  - graphviz
+  - hadolint
+  - heroku-toolbelt
+  - jq
+  - kubectl
+  - libevent
+  - libffi
+  - libidn
+  - libmemcached
+  - libmpc
+  - libpng
+  - libxml2
+  - libyaml
+  - lorem
+  - memcached
+  - moreutils
+  - nomad
+  - opam
+  - phantomjs
+  - python3
+  - readline
+  - snappy
+  - swiftlint
+  - the_silver_searcher
+  - tree
+  - vault
+  - watchman
+  - wget
+  - xhyve
+  - yarn
+  - zeromq
+
+brew_cask_applications:
+  # - name: alfred
+  - name: appzapper
+  # - name: atom
+  #   install_options: "--force"
+  # - name: bartender
+  # - name: caffeine
+  # - name: cloak
+  # - name: firefox
+  # - name: flux
+  # - name: google-chrome
+  # - name: google-cloud-sdk
+  # - name: google-hangouts
+  # - name: gpgtools
+  # - name: harvest
+  #   install_options: "--force"
+  # - name: imagealpha
+  # - name: imageoptim
+  # - name: insomniax
+  # - name: istat-menus
+  # - name: keybase
+  # - name: keyboardcleantool
+  # - name: little-snitch
+  # - name: macid
+  # - name: minikube
+    # install_options: "--force"
+  # - name: spotify
+  # - name: sublime-text
+  # - name: the-unarchiver
+  # - name: time-out
+  # - name: torbrowser
+  - name: tunnelblick
+  # - name: viscosity
+  # - name: vmware-fusion
+  - name: vlc
+  # - name: whatsapp
+  # - name: youll-never-take-me-alive
+brew_taps:
+  - name: caskroom/versions
+  # - name: homebrew/science

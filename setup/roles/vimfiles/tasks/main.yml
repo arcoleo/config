@@ -1,0 +1,79 @@
+---
+
+- name: Get vimfiles repo
+  git:
+    repo: "{{ vimfiles_repo }}"
+    dest: "{{ vimfiles_dir }}"
+  tags:
+    - vimfiles
+
+- name: Install vimfiles
+  command: "{{ vimfiles_install_cmd }}"
+  args:
+    chdir: "{{ vimfiles_dir }}"
+  tags:
+    - vimfiles
+
+- name: Install YCM
+  command: "{{ ycm_install_cmd }}"
+  args:
+    chdir: "{{ vimfiles_dir }}"
+    creates: "{{ ycm_installed_file }}"
+  tags:
+    - vimfiles
+
+- name: Install MacVim
+  homebrew:
+    name: macvim
+    install_options: "{{ macvim_install_options }}"
+    state: latest
+  tags:
+    - vimfiles
+    - brew
+
+- name: Install Neovim
+  homebrew:
+    name: neovim/neovim/neovim
+    state: latest
+  tags:
+    - vimfiles
+    - neovim
+    - brew
+
+- name: Neovim symlink .vim folder
+  file:
+    src: "{{ home_dir }}/.vim"
+    dest: "{{ home_dir }}/.config/nvim"
+    state: link
+  tags:
+    - vimfiles
+    - neovim
+    - brew
+
+- name: Neovim symlink .vimrc
+  file:
+    src: "{{ home_dir }}/.vimrc"
+    dest: "{{ home_dir }}/.config/nvim/init.vim"
+    state: link
+  tags:
+    - vimfiles
+    - neovim
+    - brew
+
+- name: Install neovim pip package
+  pip:
+    name: neovim
+    state: latest
+  tags:
+    - vimfiles
+    - neovim
+    - python
+
+- name: Install vim-vint pip package
+  pip:
+    name: vim-vint
+    state: latest
+  tags:
+    - vimfiles
+    - python
+    - packages

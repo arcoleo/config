@@ -68,6 +68,9 @@ export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
+
+export PATH=$PATH:~/.cargo/bin
+
 # Ruby
 export PATH="$PATH:/Users/darcoleo/.rbenv/versions/2.5.1/bin"
 eval "$(rbenv init - --no-rehash)"

@@ -1,0 +1,12 @@
+---
+
+langs_brew_packages:
+  - name: lua
+  - name: luajit
+  - name: ocaml
+  - name: java
+  - name: julia
+
+erlang_brew_packages:
+  - name: erlang
+  - name: rebar3
