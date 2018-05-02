@@ -1,0 +1,47 @@
+= Setting up the Mac
+  David Arcoleo
+
+== Basics
+
+=== Apple Dev Tools
+
+Install Xcode
+
+Install Apple's command-line tools
+
+$ xcode-select --install
+
+=== Brew
+
+Install Brew
+
+https://brew.sh/
+
+Install some basics
+
+$ brew install pcre xz pixz rsync the_silver_searcher tmux wget terraform sqlite readline rbenv openssl zsh python python3 jq go 
+
+=== Shell
+
+==== Zsh
+
+Install oh-my-zsh
+
+https://github.com/robbyrussell/oh-my-zsh
+
+=== Python
+
+Upgrade pip
+
+$ pip3 install --upgrade pip
+
+Create general venv
+
+$ mkdir ~/venv
+$ python3 -m venv ~/venv/general
+$ source ~/venv/general/bin/activate
+(general) $
+
+Install Ansible
+
+(general) $ pip install ansible
