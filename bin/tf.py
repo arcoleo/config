@@ -9,9 +9,10 @@ def parse_args():
     parser.add_argument('-d', '--dry-run', action='store_true')
 
     parser.add_argument('--destroy', action='store_true')
-    parser.add_argument('--plan', action='store_true', default=True, help='Create a plan')
+    parser.add_argument('--plan', action='store_true', help='Create a plan')
     parser.add_argument('--plan-file', default='terraform.tfplan')
     parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--taint', action='store_true')
 
     parser.add_argument('--target', choices=['master', 'minion', 'wiki'])
 
@@ -20,7 +21,8 @@ def parse_args():
     args = parser.parse_args()
 
     if args.reset:
-        args.destroy = True
+        args.destroy = False
+        args.taint = True
         args.plan = True
         args.apply = True
 
@@ -47,6 +49,15 @@ def terraform(args):
             command.append(target_str)
         commands.append(command)
         commands.append(['terraform', 'apply', 'delete.tfplan'])
+
+    print('Taint: %s', args.taint)
+    if args.taint:
+        command = ['terraform', 'taint']
+        taint_prefix = 'digitalocean_droplet'
+        taint_str = '%s.%s' % (taint_prefix, args.target)
+        command.append(taint_str)
+        commands.append(command)
+        
     
     if args.plan:
         command = ['terraform', 'plan', '-out=%s' % args.plan_file]
