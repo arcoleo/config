@@ -5,3 +5,11 @@ databases_brew_packages:
   - name: mysql
   - name: redis
   - name: sqlite
+  - name: mongodb
+
+python_database_packages:
+  - psycopg2
+  - SQLAlchemy
+  - pymongo
+  - redis
+  

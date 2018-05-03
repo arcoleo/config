@@ -1,22 +1,25 @@
 ---
 
 devel_brew_packages:
-  - name: autoconf
-  - name: automake
-  - name: cmake
-  - name: ctags
-  - name: makedepend
+  - autoconf
+  - automake
+  - cmake
+  - ctags
+  - makedepend
+  - git-extras
+  - git-lfs
+  - git-secrets
+  - packer
+  - s3cmd
+  - terraform
+  - bazaar
+  - hub
+  - mercurial
+
+devel_brew_packages_with_options:
   - name: git
     install_options: "with-gettext,with-pcre,with-persistent-https,with-blk-sha1"
-  - name: git-extras
-  - name: git-lfs
-  - name: git-secrets
-  - name: packer
-  - name: s3cmd
-  - name: terraform
+
+devel_cask_applications:
   - name: vagrant
   - name: virtualbox
-  - name: bazaar
-  - name: hub
-  - name: mercurial
-

@@ -9,12 +9,22 @@
     - langs
     - brew
 
-- name: Install brew packages
+- name: Install erlang brew packages
   homebrew:
     name: "{{ item.name }}"
     install_options: "{{ item.install_options | default('') }}"
     state: latest
   with_items: "{{ erlang_brew_packages }}"
   tags:
+    - langs
     - erlang
     - brew
+
+- name: Install lang cask applications
+  command: "brew cask install {{item.install_options | default('') }} {{ item.name }}"
+  with_items: "{{ brew_cask_applications }}"
+  ignore_errors: True
+  tags:
+    - langs
+    - brew
+    - brew-cask

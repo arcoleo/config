@@ -8,31 +8,23 @@
     - brew-cask
     - update
 
-- name: DSA
-  debug:
-     var: brew_base_packages
-     verbosity: 1
-  tags:
-    - base
-    - brew
-
-- name: Install base homebrew packages
-  homebrew:
-    name: "{{ brew_base_packages }}"
-    state: latest
-  tags:
-    - base
-    - brew
-
-# - name: Install base homebrew packages with options
+# - name: Install base homebrew packages
 #   homebrew:
-#     name: "{{ item.name }}"
-#     install_options: "{{ item.install_options | default('') }}"
+#     name: "{{ brew_base_packages }}"
 #     state: latest
-#   with_items: "{{ brew_base_packages }}"
 #   tags:
 #     - base
 #     - brew
+
+- name: Install base homebrew packages with options
+  homebrew:
+    name: "{{ item }}"
+    # install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ brew_base_packages }}"
+  tags:
+    - base
+    - brew
 
 - name: Install brew cask applications
   command: "brew cask install {{item.install_options | default('') }} {{ item.name }}"
