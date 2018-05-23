@@ -4,8 +4,8 @@
         80
     ],
     "window.zoomLevel": 0,
-    "python.pythonPath": "python3",
-    "python.venvPath": "/Users/darcoleo/pyenvirons",
+    "python.pythonPath": "/Users/darcoleo/venv/general/bin/python3",
+    "python.venvPath": "/Users/darcoleo/venv",
     "editor.minimap.enabled": false,
     "gitlens.keymap": "none",
     "vsicons.dontShowNewVersionMessage": true,
