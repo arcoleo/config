@@ -1,0 +1,24 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.rulers": [
+        80
+    ],
+    "window.zoomLevel": 0,
+    "python.pythonPath": "python3",
+    "python.venvPath": "/Users/darcoleo/pyenvirons",
+    "editor.minimap.enabled": false,
+    "gitlens.keymap": "none",
+    "vsicons.dontShowNewVersionMessage": true,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "gitlens.historyExplorer.enabled": true,
+}
