@@ -75,7 +75,11 @@ export PATH=$PATH:~/.cargo/bin
 export PATH="$PATH:/Users/darcoleo/.rbenv/versions/2.5.1/bin"
 eval "$(rbenv init - --no-rehash)"
 
+# Puppet
+export PATH="$PATH:/opt/puppetlabs/bin:/opt/puppetlabs/pdk/bin"
+
 source $ZSH/oh-my-zsh.sh
+
 
 # AsciiDoc
 export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
