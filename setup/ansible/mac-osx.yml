@@ -4,6 +4,7 @@
   connection: local
   gather_facts: false
   roles:
+    - langs
     - base
     - databases
     - devel
@@ -11,7 +12,6 @@
     - dotfiles
     - elixir
     - golang
-    - langs
     - nodejs
     - python
     - ruby

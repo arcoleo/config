@@ -5,19 +5,12 @@ python_brew_packages:
   - name: python@2
 
 python_packages:
-  - ansible
-  - ansible-lint
+  - virtualenv
   - autopep8
-  - awscli
-  - boto
-  - flake8
-  - neovim
   - pip
   - pipenv
   - pylint
-  - pendulum
   - requests
-  - fire
   - ipython
   - docker-py
 

@@ -1,10 +1,11 @@
 ---
 
 langs_brew_packages:
+  - name: llvm
+    install_options: "--with-toolchain --with-lldb"
   - name: lua
   - name: luajit
   - name: ocaml
-  # - name: java
 
 erlang_brew_packages:
   - name: erlang

@@ -1,20 +1,21 @@
 ---
 
 devel_brew_packages:
-  - autoconf
   - automake
+  - bazaar
   - cmake
+  - cmatrix
   - ctags
-  - makedepend
   - git-extras
   - git-lfs
   - git-secrets
+  - hub
+  - kubernetes-cli
+  - makedepend
+  - mercurial
   - packer
   - s3cmd
   - terraform
-  - bazaar
-  - hub
-  - mercurial
 
 devel_brew_packages_with_options:
   - name: git
