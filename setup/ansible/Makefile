@@ -10,7 +10,8 @@ bootstrap:
 provision:
 	@echo "-----> Running ansible playbook to provision system..."
 	@HOMEBREW_CASK_OPTS="--appdir=/Applications" \
-		time ansible-playbook mac-osx.yml --diff --tags=base,databases,devel,golang,langs,python,ruby,rust
+		# time ansible-playbook mac-osx.yml --diff --tags=base,databases,devel,golang,langs,python,ruby,rust
+		time ansible-playbook mac-osx.yml --diff --tags=python
 
 role:
 	@if [ "$($@)" = "" ]; then echo "Role is not defined. Pass role=rolename"; exit 1; fi

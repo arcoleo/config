@@ -4,66 +4,66 @@ brew_install_cmd: "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Home
 brew_bin: "/usr/local/bin/brew"
 brew_cask_bin: "/usr/local/bin/brew-cask"
 brew_base_packages:
-  - asciidoctor
-  - binutils
-  - certbot
-  - cmatrix
-  - coreutils
-  - cscope
-  - curl
-  - emacs
-  - exiftool
-  - exercism
-  - findutils
-  - fn
-  - fontconfig
-  - freetype
-  - fswatch
-  - fzf
-  - gawk
-  - gettext
-  - gnu-indent
-  - gnu-getopt
-  - gnu-sed
-  - gnu-tar
-  - graphviz
-  - hadolint
-  - heroku-toolbelt
-  - htop
-  - httpie
-  - imagemagick
-  - jq
-  - kubectl
-  - libssh2
-  - libevent
-  - libffi
-  - libidn
-  - libmemcached
-  - libmpc
-  - libpng
-  - libxml2
-  - libyaml
-  - lorem
-  - md5sha1sum
-  - memcached
-  - moreutils
-  - nomad
-  - opam
-  - phantomjs
-  - pixz
-  - python3
-  - readline
-  - snappy
-  - swiftlint
-  - the_silver_searcher
-  - tree
-  - unison
-  - vault
-  - watchman
-  - wget
-  - xhyve
-  - yarn
-  - zeromq
+  - name: asciidoctor
+  - name: binutils
+  - name: certbot
+  - name: cmatrix
+  - name: coreutils
+  - name: cscope
+  - name: curl
+  - name: emacs
+  - name: exiftool
+  - name: exercism
+  - name: findutils
+  - name: fn
+  - name: fontconfig
+  - name: freetype
+  - name: fswatch
+  - name: fzf
+  - name: gawk
+  - name: gettext
+  - name: gnu-indent
+  - name: gnu-getopt
+  - name: gnu-sed
+  - name: gnu-tar
+  - name: graphviz
+  - name: hadolint
+  - name: heroku-toolbelt
+  - name: htop
+  - name: httpie
+  - name: imagemagick
+  - name: jq
+  - name: kubectl
+  - name: libssh2
+  - name: libevent
+  - name: libffi
+  - name: libidn
+  - name: libmemcached
+  - name: libmpc
+  - name: libpng
+  - name: libxml2
+  - name: libyaml
+  - name: lorem
+  - name: md5sha1sum
+  - name: memcached
+  - name: moreutils
+  - name: nomad
+  - name: opam
+  - name: phantomjs
+  - name: pixz
+  - name: python3
+  - name: readline
+  - name: snappy
+  - name: swiftlint
+  - name: the_silver_searcher
+  - name: tree
+  - name: unison
+  - name: vault
+  - name: watchman
+  - name: wget
+  - name: xhyve
+  - name: yarn
+  - name: zeromq
   # - burntsushi/ripgrep/ripgrep-bin
 
 brew_cask_applications:
