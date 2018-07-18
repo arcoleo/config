@@ -64,7 +64,7 @@ brew_base_packages:
   - xhyve
   - yarn
   - zeromq
-  - burntsushi/ripgrep/ripgrep-bin
+  # - burntsushi/ripgrep/ripgrep-bin
 
 brew_cask_applications:
   # - name: alfred
@@ -103,6 +103,9 @@ brew_cask_applications:
   - name: vlc
   # - name: whatsapp
   # - name: youll-never-take-me-alive
-brew_taps:
-  - name: caskroom/versions
-  # - name: homebrew/science
+
+# brew_taps:
+#   # - name: caskroom/versions
+#   # - name: homebrew/science
+#   - name: burntsushi/ripgrep
+#     url: 'https://github.com/BurntSushi/ripgrep.git'

@@ -1,20 +1,27 @@
 ---
+
+- name: Install brew packages
+  homebrew:
+    name: "{{ langs_brew_packages }}"
+    state: latest
+  tags:
+    - langs
+    - brew
+
 - name: Install brew packages
   homebrew:
     name: "{{ item.name }}"
     install_options: "{{ item.install_options | default('') }}"
     state: latest
-  with_items: "{{ langs_brew_packages }}"
+  with_items: "{{ langs_brew_packages_options }}"
   tags:
     - langs
     - brew
 
 - name: Install erlang brew packages
   homebrew:
-    name: "{{ item.name }}"
-    install_options: "{{ item.install_options | default('') }}"
+    name: "{{ erlang_brew_packages }}"
     state: latest
-  with_items: "{{ erlang_brew_packages }}"
   tags:
     - langs
     - erlang

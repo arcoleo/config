@@ -15,22 +15,32 @@
 #   tags:
 #     - base
 #     - brew
+
+# - name: Brew untap
+#   homebrew_tap:
+#     name: "{{ item.name }}"
+#     state: absent
+#   with_items: "{{ brew_taps }}"
+#   tags:
+#     - base
+#     - brew
+#     - brew-tap
+
 - name: Install brew taps
-  homebrew_tap:
-    name: "{{ item.name }}"
-    state: "{{ item.state | default('present') }}"
-  with_items: "{{ brew_taps }}"
+  command: >
+    brew tap caskroom/versions
+    brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
   tags:
     - base
     - brew
     - brew-tap
 
-- name: Install brew taps
-  homebrew_tap:
-    name: burntsushi/ripgrep
-    url: 'https://github.com/BurntSushi/ripgrep.git'
+# - name: Install brew taps
+#   homebrew_tap:
+#     name: burntsushi/ripgrep
+#     url: 'https://github.com/BurntSushi/ripgrep.git'
 
-- name: Install base homebrew packages with options
+- name: Install base homebrew packages - {{ brew_base_packages }}
   homebrew:
     name: "{{ item }}"
     # install_options: "{{ item.install_options | default('') }}"

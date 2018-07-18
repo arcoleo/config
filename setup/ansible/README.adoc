@@ -16,7 +16,7 @@ $ xcode-select --install
 == Setup
 
 ----
-$ cd arcoleo/config/setup
+$ cd arcoleo/config/setup/ansible
 $ make boostrap
 $ source ~/venv/general/bin/activate
 ----

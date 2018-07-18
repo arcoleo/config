@@ -56,6 +56,9 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(git cp extract history jira jsontools sublime)
 
+# Python
+eval "$(pyenv init -)"
+
 # User configuration
 export JIRA_URL="https://jira.splunk.com"
 export JIRA_PREFIX="CWORKS-"
@@ -63,12 +66,12 @@ export JIRA_NAME="darcoleo"
 export JIRA_RAPID_BOARD=true
 export JIRA_DEFAULT_ACTION="dashboard"
 
-
+# Golang
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-
+# Rust
 export PATH=$PATH:~/.cargo/bin
 
 # Ruby
