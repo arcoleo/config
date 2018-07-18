@@ -58,7 +58,7 @@ plugins=(git cp extract history jira jsontools sublime)
 
 # User configuration
 export JIRA_URL="https://jira.splunk.com"
-export JIRA_PREFIX="AMI-"
+export JIRA_PREFIX="CWORKS-"
 export JIRA_NAME="darcoleo"
 export JIRA_RAPID_BOARD=true
 export JIRA_DEFAULT_ACTION="dashboard"
