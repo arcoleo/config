@@ -69,6 +69,7 @@ brew_base_packages:
 brew_cask_applications:
   # - name: alfred
   - name: appzapper
+  - name: iterm2
   # - name: atom
   #   install_options: "--force"
   # - name: bartender
