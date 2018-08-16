@@ -40,15 +40,21 @@
 #     name: burntsushi/ripgrep
 #     url: 'https://github.com/BurntSushi/ripgrep.git'
 
-- name: Install base homebrew packages
-  homebrew:
-    name: "{{ item.name }}"
-    # install_options: "{{ item.install_options | default('') }}"
-    state: latest
-  with_items: "{{ brew_base_packages }}"
+
+- name: Install brew cask applications
+  command: "brew cask install {{item.install_options | default('') }} {{ item.name }}"
+  # TODO: Figure out "Error no cask hydra" issue
+  # homebrew_cask:
+  #   name: "{{ item.name }}"
+  #   state: "{{ item.state | default('present') }}"
+  #   install_options: "{{ item.install_options | default('') }}"
+  with_items: "{{ brew_cask_applications }}"
+  ignore_errors: True
   tags:
     - base
     - brew
+    - brew-cask
+
 
 - name: Cleanup homebrew
   command: "brew cleanup -s"
@@ -67,30 +73,3 @@
     - brew-cask
     - cleanup
 
-- name: ssh dir
-  file:
-    path: "{{ home_dir }}/.ssh"
-    state: directory
-  tags:
-    - base
-
-- name: Project workspace
-  file:
-    path: "{{ workspace_dir }}"
-    state: directory
-  tags:
-    - base
-
-- name: User tmp dir
-  file:
-    path: "{{ home_dir }}/tmp"
-    state: directory
-  tags:
-    - base
-
-- name: bin dir
-  file:
-    path: "{{ home_dir }}/bin"
-    state: directory
-  tags:
-    - base
