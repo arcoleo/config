@@ -6,6 +6,7 @@
   roles:
     - langs
     - base
+    - large_apps
     - databases
     - devel
     - docker

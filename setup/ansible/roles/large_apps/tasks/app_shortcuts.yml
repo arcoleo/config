@@ -1,0 +1,34 @@
+---
+
+# create /Applications/shortcuts
+
+# Create folders under shortcuts
+
+# Create symlinks in folders under shortcuts
+
+- name: "Include vars"
+  include_vars:
+    file: app_shortcuts.yml
+
+- name: "Create shortcuts folder"
+  file:
+    path: /Applications/shortcuts
+    state: directory
+
+- name: "Folders"
+  debug: msg="Hello {{ item.name }} "
+  with_items:
+    - "{{ shortcut_folders }}"
+
+
+- name: "Folders 2"
+  debug: msg="Hello {{ item.0.name }} / {{ item.1 }}"
+  with_subelements:
+    - "{{ shortcut_folders }}"
+    - links
+
+# - name: Add a domain symlinks 
+#   debug: msg="name -  {{ item }}"
+#   with_nested: 
+#     - "{{ shortcut_folders }}"
+#     - [ 'links' ]

@@ -1,0 +1,61 @@
+---
+
+shortcut_folders:
+  - name: Dev
+    links:
+      - Atom
+      - SourceTree
+      - Sublime Text
+      - VirtualBox
+      - Visual Studio Code
+      - XCode
+  - name: Media
+    links:
+      - Adobe Lightroom
+      - Calibre
+      - Google Play Music Desktop Player
+      - Image Capture
+      - iMovie
+      - iMusic
+      - iTunes
+      - Kindle
+      - Meta
+      - Ondesoft Audiobook Converter
+      - Tag Editor
+      - Tomahawk
+  - name: Network
+    links:
+      - Airmail
+      - Brave
+      - Discord
+      - FileZilla
+      - Firefox
+      - Messages
+      - qbittorent
+      - Skype
+      - Slack
+      - Telegram
+      - VidyoDesktop
+  - name: Office
+    links:
+      - Keynote
+      - Numbers
+      - Pages
+      - yEd
+  - name: Utils
+    links:
+      - Authy Desktop
+      - Emacs
+      - Path Finder
+      - Splunk
+      - Vagrant Manager
+      - VirtualBox
+
+# Installed Apps
+#   Brackets
+#   Clocker
+#   Docker
+#   Mathematica
+#   Unison
+#   VLC
+#   zoom
