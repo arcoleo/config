@@ -23,6 +23,15 @@ brew_cask_applications:
   - name: qbittorrent
   - name: mackup
   - name: atom
+  - name: sourcetree
+  - name: calibre
+  - name: discord
+  - name: filezilla
+  - name: authy
+  - name: vagrant-manager
+  - name: telegram
+  - name: emacs
+  - name: path-finder
   # - name: bartender
   # - name: cloak
   # - name: flux

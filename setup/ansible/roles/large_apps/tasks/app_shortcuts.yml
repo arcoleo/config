@@ -15,14 +15,20 @@
     path: /Applications/shortcuts
     state: directory
 
-- name: "Folders"
-  debug: msg="Hello {{ item.name }} "
+- name: "Ensure sub-shortcut folders exist"
+  file:
+    path: /Applications/shortcuts/{{ item.name }}
+    state: directory
   with_items:
     - "{{ shortcut_folders }}"
 
 
-- name: "Folders 2"
-  debug: msg="Hello {{ item.0.name }} / {{ item.1 }}"
+- name: "Ensure symlinks in shortcut folders"
+  # debug: msg="Hello {{ item.0.name }} / {{ item.1 }}"
+  file:
+    src: /Applications/{{ item.1 }}
+    dest: /Applications/shortcuts/{{ item.0.name }}/{{ item.1}}
+    state: link
   with_subelements:
     - "{{ shortcut_folders }}"
     - links
