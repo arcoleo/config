@@ -1,0 +1,68 @@
+---
+
+brew_install_cmd: "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+brew_bin: "/usr/local/bin/brew"
+brew_cask_bin: "/usr/local/bin/brew-cask"
+
+
+brew_cask_applications:
+  # - name: alfred
+  - name: appzapper
+  - name: iterm2
+  - name: visual-studio-code
+  - name: caffeine
+  - name: dropbox
+  - name: evernote
+  - name: firefox
+  - name: google-chrome
+  - name: kindle
+  - name: skype
+  - name: slack
+  - name: sublime-text
+  - name: the-unarchiver
+  - name: qbittorrent
+  - name: mackup
+  - name: atom
+  - name: sourcetree
+  - name: calibre
+  - name: discord
+  - name: filezilla
+  - name: authy
+  - name: vagrant-manager
+  - name: telegram
+  - name: emacs
+  - name: path-finder
+  # - name: bartender
+  # - name: cloak
+  # - name: flux
+  
+  # - name: google-cloud-sdk
+  # - name: google-hangouts
+  # - name: gpgtools
+  # - name: harvest
+  #   install_options: "--force"
+  # - name: imagealpha
+  # - name: imageoptim
+  # - name: insomniax
+  # - name: istat-menus
+  # - name: keybase
+  # - name: keyboardcleantool
+  # - name: little-snitch
+  # - name: macid
+  # - name: minikube
+    # install_options: "--force"
+  # - name: spotify
+  # - name: time-out
+  # - name: torbrowser
+  - name: tunnelblick
+  # - name: viscosity
+  # - name: vmware-fusion
+  - name: vlc
+  # - name: whatsapp
+  # - name: youll-never-take-me-alive
+
+# brew_taps:
+#   # - name: caskroom/versions
+#   # - name: homebrew/science
+#   - name: burntsushi/ripgrep
+#     url: 'https://github.com/BurntSushi/ripgrep.git'
