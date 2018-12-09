@@ -15,6 +15,7 @@ brew_cask_applications:
   - name: evernote
   - name: firefox
   - name: google-chrome
+  - name: jedit
   - name: kindle
   - name: skype
   - name: slack

@@ -140,10 +140,18 @@ fi
 
 export HISTSIZE=10000000
 export SAVEHIST=$HISTSIZE
-export HISTFILE=~/Dropbox/config/zsh_history
+#export HISTFILE=~/Dropbox/config/zsh_history
 # prevent entires from being recorded by preceding them with at least one space
 setopt hist_ignore_space
 
 
 fpath+=~/.zfunc
-source ~/.zsh_alias
+# source ~/.zsh_alias
+
+alias dj='cd ~/repo/gitlab/arcoleo/django-proto'
+alias djs='cd ~/repo/gitlab/arcoleo/django-proto && source ./dev_pipshell'
+alias djr='cd ~/repo/gitlab/arcoleo/django-proto/proj1/survey1 && ./run_server'
+
+export PROMPT_COMMAND='log-recent -r $? -c "$(HISTTIMEFORMAT= history 1)" -p $$'
+export PATH="/usr/local/opt/binutils/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
