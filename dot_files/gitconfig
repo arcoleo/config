@@ -31,7 +31,7 @@
 	path = 
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
 [commit]
@@ -41,3 +41,9 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+
+# [url "https://darcoleo:QiC6VX1oi7NuMA92r7eM@cd.splunkdev.com/cloudworks"]
+# 	insteadOf = http://cd.splunkdev.com/cloudworks
+
+[url "git@cd.splunkdev.com:"]
+    insteadOf = https://cd.splunkdev.com/

@@ -1,5 +1,9 @@
 OS=`uname -s`
 HOST=`uname -n`
+AT_WORK=0
+
+source ~/at_work.sh
+echo "AT_WORK=${AT_WORK}"
 
 export PATH="/Users/darcoleo/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.cargo/bin"
 export MANPATH="/usr/local/man:$MANPATH"
@@ -56,16 +60,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(git cp extract history jira jsontools sublime)
 
-# Python
-eval "$(pyenv init -)"
-
-# User configuration
-export JIRA_URL="https://jira.splunk.com"
-export JIRA_PREFIX="CWORKS-"
-export JIRA_NAME="darcoleo"
-export JIRA_RAPID_BOARD=true
-export JIRA_DEFAULT_ACTION="dashboard"
-
 # Golang
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
@@ -75,11 +69,13 @@ export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 export PATH=$PATH:~/.cargo/bin
 
 # Ruby
-export PATH="$PATH:/Users/darcoleo/.rbenv/versions/2.5.1/bin"
+export PATH="$PATH:~/.rbenv/versions/2.5.1/bin"
 eval "$(rbenv init - --no-rehash)"
 
 # Puppet
-export PATH="$PATH:/opt/puppetlabs/bin:/opt/puppetlabs/pdk/bin"
+# if [[ ${AT_WORK} -eq 1]]; then
+#     export PATH="$PATH:/opt/puppetlabs/bin:/opt/puppetlabs/pdk/bin"
+# fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,9 +140,35 @@ export SAVEHIST=$HISTSIZE
 # prevent entires from being recorded by preceding them with at least one space
 setopt hist_ignore_space
 
+# Brew Stuff
+export PATH=/usr/local/opt/libxml2/bin:/usr/local/opt/sqlite/bin:${PATH}:/usr/local/opt/binutils/bin
 
-fpath+=~/.zfunc
-# source ~/.zsh_alias
+
+# Python
+eval "$(pyenv init -)"
+
+
+export CW_HOME=${HOME}/cloud
+
+# fpath+=~/.zfunc
+# fpath+=~/.zfuncs
+fpath=(
+    ~/.zfunc
+    ~/.zfuncs
+    ~/.zfuncs/**/*~*/(CVS)#(/N)
+    "${fpath[@]}"
+)
+
+# fpath+=~/.zfunc
+source ~/.zsh_alias
+
+autoload -Uz arcoleo
+autoload -Uz gsm
+
+if [[ ${AT_WORK} -eq 1 ]]; then
+    echo "AT_WORK, loading ~/at_work.zshrc"
+    source ~/at_work.zshrc
+fi
 
 alias dj='cd ~/repo/gitlab/arcoleo/django-proto'
 alias djs='cd ~/repo/gitlab/arcoleo/django-proto && source ./dev_pipshell'
@@ -155,3 +177,5 @@ alias djr='cd ~/repo/gitlab/arcoleo/django-proto/proj1/survey1 && ./run_server'
 export PROMPT_COMMAND='log-recent -r $? -c "$(HISTTIMEFORMAT= history 1)" -p $$'
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+
+ssh-add -K
