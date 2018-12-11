@@ -1,0 +1,17 @@
+---
+
+python_packages:
+  - virtualenv
+  - autopep8
+  - pip
+  - pipenv
+  - pylint
+  - requests
+  - ipython
+  - docker-py
+
+
+python_pyenv_install_cmd: "CFLAGS=\"-I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include\" LDFLAGS=\"-L$(brew --prefix openssl)/lib -L/usr/local/opt/sqlite/lib\" pyenv install"
+python_use_pyenv: True
+python_pyenv_versions:
+  - 3.7.0

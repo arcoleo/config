@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+#
+# Sets up requirements to provision with ansible
+#
+
+#
+# Clean display function
+#
+# usage:
+#        display "My thing to output"
+#
+function display() {
+    echo "----> $1"
+}
+
+# if [ ! `which pip` ]
+# then
+#     display "Installing pip"
+#     sudo easy_install pip
+# fi
+
+# sudo pip install --upgrade -r requirements.txt
+
+if [ ! `which brew` ]; then
+    display "Installing Homebrew"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if [ `which brew` ]; then
+    brew install pyenv openssl readline git
+    git clone https://github.com/momo-lab/pyenv-install-latest.git "$(pyenv root)"/plugins/pyenv-install-latest
+    pyenv install 2.7.15
+    pyenv install 3.7.0
+    eval "$(pyenv init -)"
+    pyenv global 3.7.0
+
+    display "Append to ~.zshrc"
+    display "# Python"
+	display 'eval "$(pyenv init -)"'
+	display ""
+	display "Open a new shell, run 'pyenv versions', then 'pyenv global <desired_version>', then 'make provision'"
+	pip3 install ansible
+	pyenv rehash
+
+    # pip3 install --upgrade pip
+    # pip3 install --upgrade requirements
+fi
+
+# if [ ! -d "${HOME}/venv" ]; then
+#     mkdir ~/venv
+# fi
+
+# python3 -m venv ~/venv/general
+
+# vim: ft=sh:

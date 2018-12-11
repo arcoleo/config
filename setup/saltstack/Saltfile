@@ -1,0 +1,20 @@
+# This is an example of what the Saltfile can look like, it is basically default
+# options. You can read more on it here:
+# https://docs.saltstack.com/en/develop/topics/ssh/index.html#define-cli-options-with-saltfile
+
+# https://docs.saltstack.com/en/latest/ref/configuration/examples.html
+ 
+conf_file: $PWD/etc/salt/master
+pki_dir: $PWD/etc/salt/pki/master
+root_dir: $PWD/root
+
+
+salt-ssh:
+  config_dir: ./etc/salt
+  max_procs: 30
+  wipe_ssh: True
+
+salt-master:
+  config_dir: $PWD/etc/salt
+  pki_dir: $PWD/etc/salt/pki/master
+  logging_level: debug

@@ -1,0 +1,21 @@
+---
+
+- name: Install database packages
+  homebrew:
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ databases_brew_packages }}"
+  tags:
+    - databases
+    - brew
+
+- name: Install python database packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+    state: latest
+  with_items: "{{ python_database_packages }}"
+  tags:
+    - python
+    - databases

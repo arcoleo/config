@@ -1,0 +1,10 @@
+[extensions]
+#prompt = /var/repo/bitbucket/sjl/hg-prompt/prompt.py
+
+#[hgk]
+#path=/usr/local/lib/python2.6/dist-packages/mercurial-1.3.1-py26-linux-x86_64.egg/hgext/hgk.py
+
+[ui]
+username = David Arcoleo <david@arcoleo.org>
+
+

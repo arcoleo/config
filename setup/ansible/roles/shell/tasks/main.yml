@@ -1,0 +1,11 @@
+---
+- name: Install shell brew packages
+  homebrew:
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ shell_brew_packages }}"
+  tags:
+    - shell
+    - brew
+

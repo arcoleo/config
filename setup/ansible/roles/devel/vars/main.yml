@@ -1,0 +1,26 @@
+---
+
+devel_brew_packages:
+  - name: automake
+  - name: bazaar
+  - name: cmake
+  - name: cmatrix
+  - name: ctags
+  - name: git-extras
+  - name: git-lfs
+  - name: git-secrets
+  - name: hub
+  - name: kubernetes-cli
+  - name: makedepend
+  - name: mercurial
+  - name: packer
+  - name: s3cmd
+  - name: terraform
+
+devel_brew_packages_with_options:
+  - name: git
+    install_options: "with-gettext,with-pcre,with-persistent-https,with-blk-sha1"
+
+devel_cask_applications:
+  - name: vagrant
+  - name: virtualbox

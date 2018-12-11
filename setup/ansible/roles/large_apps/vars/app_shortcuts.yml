@@ -1,0 +1,53 @@
+---
+
+shortcut_folders:
+  - name: Dev
+    links:
+      - Atom.app
+      - Sourcetree.app
+      - "Sublime Text.app"
+      - VirtualBox.app
+      - "Visual Studio Code.app"
+      - XCode.app
+  - name: Media
+    links:
+      - calibre.app
+      - "Image Capture.app"
+      - iMovie.app
+      - iTunes.app
+      - Kindle.app
+      - "Ondesoft Audiobook Converter.app"
+      - "Tag Editor.app"
+  - name: Network
+    links:
+      - Brave.app
+      - Discord.app
+      - FileZilla.app
+      - Firefox.app
+      - Messages.app
+      - qbittorrent.app
+      - Skype.app
+      - Slack.app
+      - Telegram.app
+  - name: Office
+    links:
+      - Keynote.app
+      - Numbers.app
+      - Pages.app
+      - yEd.app
+  - name: Utils
+    links:
+      - "Authy Desktop.app"
+      - Emacs.app
+      - "Path Finder.app"
+      - "Vagrant Manager.app"
+      - VirtualBox.app
+
+# Installed Apps
+#   Brackets
+#   Clocker
+#   Docker
+#   Mathematica
+#   Unison
+#   VLC
+#   zoom

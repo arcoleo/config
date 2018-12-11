@@ -1,0 +1,7 @@
+---
+
+shell_brew_packages:
+  - name: bash
+  - name: bash-completion
+  - name: zsh
+  - name: iterm2

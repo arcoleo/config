@@ -1,0 +1,30 @@
+---
+
+- name: Install devel brew packages
+  homebrew:
+    name: "{{ item.name }}"
+    state: latest
+  with_items: "{{ devel_brew_packages }}"
+  tags:
+    - devel
+    - brew
+
+# Split this way because options make it much slower
+- name: Install devel brew packages with options
+  homebrew:
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ devel_brew_packages_with_options }}"
+  tags:
+    - devel
+    - brew
+
+- name: Install devel cask applications
+  command: "brew cask install {{item.install_options | default('') }} {{ item.name }}"
+  with_items: "{{ devel_cask_applications }}"
+  ignore_errors: True
+  tags:
+    - devel
+    - brew
+    - brew-cask

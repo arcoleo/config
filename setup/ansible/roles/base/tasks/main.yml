@@ -1,0 +1,96 @@
+---
+
+- name: Update homebrew
+  command: "brew update"
+  tags:
+    - base
+    - brew
+    - brew-cask
+    - update
+
+# - name: Install base homebrew packages
+#   homebrew:
+#     name: "{{ brew_base_packages }}"
+#     state: latest
+#   tags:
+#     - base
+#     - brew
+
+# - name: Brew untap
+#   homebrew_tap:
+#     name: "{{ item.name }}"
+#     state: absent
+#   with_items: "{{ brew_taps }}"
+#   tags:
+#     - base
+#     - brew
+#     - brew-tap
+
+- name: Install brew taps
+  command: >
+    brew tap caskroom/versions
+  # brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
+  tags:
+    - base
+    - brew
+    - brew-tap
+
+# - name: Install brew taps
+#   homebrew_tap:
+#     name: burntsushi/ripgrep
+#     url: 'https://github.com/BurntSushi/ripgrep.git'
+
+- name: Install base homebrew packages
+  homebrew:
+    name: "{{ item.name }}"
+    # install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ brew_base_packages }}"
+  tags:
+    - base
+    - brew
+
+- name: Cleanup homebrew
+  command: "brew cleanup -s"
+  ignore_errors: True
+  tags:
+    - base
+    - brew
+    - cleanup
+
+- name: Cleanup cask
+  command: "brew cask cleanup"
+  ignore_errors: True
+  tags:
+    - base
+    - brew
+    - brew-cask
+    - cleanup
+
+- name: ssh dir
+  file:
+    path: "{{ home_dir }}/.ssh"
+    state: directory
+  tags:
+    - base
+
+- name: Project workspace
+  file:
+    path: "{{ workspace_dir }}"
+    state: directory
+  tags:
+    - base
+
+- name: User tmp dir
+  file:
+    path: "{{ home_dir }}/tmp"
+    state: directory
+  tags:
+    - base
+
+- name: bin dir
+  file:
+    path: "{{ home_dir }}/bin"
+    state: directory
+  tags:
+    - base

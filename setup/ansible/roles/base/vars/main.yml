@@ -1,0 +1,75 @@
+---
+
+brew_install_cmd: "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+brew_bin: "/usr/local/bin/brew"
+brew_cask_bin: "/usr/local/bin/brew-cask"
+brew_base_packages:
+  - name: asciidoctor
+  - name: binutils
+  - name: certbot
+  - name: cmatrix
+  - name: coreutils
+  - name: cscope
+  - name: curl
+  - name: emacs
+  - name: exiftool
+  - name: exercism
+  - name: findutils
+  - name: fn
+  - name: fontconfig
+  - name: freetype
+  - name: fswatch
+  - name: fzf
+  - name: gawk
+  - name: gettext
+  - name: gnu-indent
+  - name: gnu-getopt
+  - name: gnu-sed
+  - name: gnu-tar
+  - name: graphviz
+  - name: hadolint
+  - name: heroku-toolbelt
+  - name: htop
+  - name: httpie
+  - name: imagemagick
+  - name: jq
+  - name: kubectl
+  - name: libssh2
+  - name: libevent
+  - name: libffi
+  - name: libidn
+  - name: libmemcached
+  - name: libmpc
+  - name: libpng
+  - name: libxml2
+  - name: libyaml
+  - name: lorem
+  - name: md5sha1sum
+  - name: memcached
+  - name: moreutils
+  - name: nomad
+  - name: opam
+  - name: phantomjs
+  - name: pixz
+  - name: python3
+  - name: readline
+  - name: snappy
+  - name: swiftlint
+  - name: the_silver_searcher
+  - name: tree
+  - name: unison
+  - name: vault
+  - name: watchman
+  - name: wget
+  - name: xhyve
+  - name: yarn
+  - name: zeromq
+  # - burntsushi/ripgrep/ripgrep-bin
+
+
+
+# brew_taps:
+#   # - name: caskroom/versions
+#   # - name: homebrew/science
+#   - name: burntsushi/ripgrep
+#     url: 'https://github.com/BurntSushi/ripgrep.git'

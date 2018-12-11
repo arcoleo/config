@@ -1,0 +1,14 @@
+= Vagrant
+
+== Steps
+
+Create Vagrantfile
+
+----
+vagrant plugin install vagrant-vbguest
+vagrant up
+----
+
+== Info
+
+https://github.com/dotless-de/vagrant-vbguest

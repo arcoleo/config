@@ -1,0 +1,14 @@
+*~
+*.orig
+*.rej
+*.swp
+.\#*
+\#*
+*.obj
+*.o
+.DS_Store
+.project
+.pydevproject
+TAGS
+*elc
+

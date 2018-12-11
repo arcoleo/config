@@ -1,0 +1,103 @@
+h2. Emacs configuration
+
+h3. Cedet
+
+If you want to use Cedet, you must check out from cvs.
+
+<pre><code>cvs -z3 -d:pserver:anonymous@cedet.cvs.sourceforge.net:/cvsroot/cedet co -P cedet
+</code></pre>
+
+Compilation Settings -
+
+In the Makefile, set
+
+<pre><code>EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
+</code></pre>
+
+if you are using Emacs.app.  If you are using Linux or BSD or something, it may be
+
+<pre><code>EMACS=/usr/local/bin/emacs
+</code></pre>
+
+Also set
+
+<pre><code>CEDET_HOME=/Users/you/apps/emacs/cedet
+</code></pre>
+
+Compile -
+
+<pre><code>$ cd cedet
+$ make
+</code></pre>
+
+NOTE: if you are on BSD, use gmake.
+
+h3. ECB
+
+Download ecb 2.40
+
+Compilation Settings -
+
+In the Makefile, set
+
+<pre><code>EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
+</code></pre>
+
+if you are using Emacs.app.
+
+
+h3. Pymacs
+
+At the time of this writing, the latest released version is 0.23
+
+<pre><code>$ cd ~/apps
+$ curl -o Pymacs.tar.gz https://github.com/pinard/Pymacs/tarball/v0.23-beta9
+$ tar xvfz Pymacs.tar.gz
+$ cd Pymacs-0.23
+$ make
+$ sudo python setup.py install
+$ cd ..
+$ rm -rf Pymacs-0.23
+</code></pre>
+
+h3. Rope
+
+<pre><code>$ cd /path/to/repos
+$ mkdir -p agr/rope
+$ cd agr/rope
+$ hg clone http://bitbucket.org/agr/rope
+$ hg clone http://bitbucket.org/agr/ropemacs
+$ hg clone http://bitbucket.org/agr/ropemode
+$ cd ropemacs
+$ ln -s ../ropemode/ropemode ropemode
+$ cd ../rope
+$ sudo python setup.py install
+$ cd ../ropemacs
+$ sudo python setup.py install
+</code></pre>
+
+Quick test : you should be able to import ropemacs in a python shell.
+
+h3. Yasnippet
+
+http://code.google.com/p/yasnippet/
+
+Download yasnippet.tar.bz2
+
+<pre><code>$ cd ~/apps/emacs
+$ mv ~/Downloads/yasnippet-0.6.1c.tar.bz2
+$ bzcat yasnippet-0.6.1c.tar.bz2 | tar -xf -
+$ rm yasnippet-0.6.1c.tar.bz2
+$ ln -s yasnippet-0.6.1c yasnippet
+</code></pre>
+
+h3. Links
+
+<pre><code>$ cd ~
+$ mkdir -p apps/emacs
+$ cd apps/emacs
+$ ln -s /path/to/cedet cedet
+$ mv /path/to/ecb-2.40 .
+$ ln -s ecb-2.40 ecb
+$ ln -s /path/to/repos/agr/rope rope 
+</code></pre>

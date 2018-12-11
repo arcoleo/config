@@ -1,0 +1,17 @@
+---
+
+langs_brew_packages:
+  - lua
+  - luajit
+  - ocaml
+
+langs_brew_packages_options:
+  - name: llvm
+    install_options: "--with-toolchain --with-lldb"
+
+erlang_brew_packages:
+  - erlang
+  - rebar3
+
+langs_brew_casks:
+  - name: julia
