@@ -42,8 +42,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 
-# [url "https://darcoleo:QiC6VX1oi7NuMA92r7eM@cd.splunkdev.com/cloudworks"]
-# 	insteadOf = http://cd.splunkdev.com/cloudworks
+[include]
+    path = GD/config/gitconfig
 
-[url "git@cd.splunkdev.com:"]
-    insteadOf = https://cd.splunkdev.com/

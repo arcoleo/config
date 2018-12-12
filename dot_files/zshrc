@@ -3,7 +3,7 @@ HOST=`uname -n`
 AT_WORK=0
 
 source ~/at_work.sh
-echo "AT_WORK=${AT_WORK}"
+# echo "AT_WORK=${AT_WORK}"
 
 export PATH="/Users/darcoleo/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.cargo/bin"
 export MANPATH="/usr/local/man:$MANPATH"
@@ -161,21 +161,21 @@ fpath=(
 
 # fpath+=~/.zfunc
 source ~/.zsh_alias
-
+source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz arcoleo
 autoload -Uz gsm
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd histdb-update-outcome
 
 if [[ ${AT_WORK} -eq 1 ]]; then
     echo "AT_WORK, loading ~/at_work.zshrc"
     source ~/at_work.zshrc
 fi
 
-alias dj='cd ~/repo/gitlab/arcoleo/django-proto'
-alias djs='cd ~/repo/gitlab/arcoleo/django-proto && source ./dev_pipshell'
-alias djr='cd ~/repo/gitlab/arcoleo/django-proto/proj1/survey1 && ./run_server'
 
-export PROMPT_COMMAND='log-recent -r $? -c "$(HISTTIMEFORMAT= history 1)" -p $$'
+
+# export PROMPT_COMMAND='log-recent -r $? -c "$(HISTTIMEFORMAT= history 1)" -p $$'
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
-ssh-add -K
+# ssh-add -K

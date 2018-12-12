@@ -1,8 +1,6 @@
-alias cloud-a="cd ~/cloud; source cloud-ops/conf/setup_ansible -s"
-alias cloud-a2="cd ~/cloud2; source cloud-ops/conf/setup_ansible -s"
-alias cloud-b="cd ~/repo/bitbucket/gitplay; source stackmakr_rfg/conf/setup_env -s"
 alias f="find . -name"
 
+alias dj='cd ~/repo/gitlab/arcoleo/django-proto'
+alias djs='cd ~/repo/gitlab/arcoleo/django-proto && source ./dev_pipshell'
+alias djr='cd ~/repo/gitlab/arcoleo/django-proto/proj1/survey1 && ./run_server'
 
-# alias gsm="git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
-alias gsm1="git log"
