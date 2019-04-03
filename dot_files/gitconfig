@@ -1,6 +1,6 @@
 [user]
 	name = David Arcoleo
-	email = darcoleo@splunk.com
+	email = david@arcoleo.org
 
 [alias]
     st = status
@@ -28,7 +28,7 @@
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
@@ -36,14 +36,9 @@
 
 [commit]
 	template = /Users/darcoleo/.stCommitMsg
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-
-# [url "https://darcoleo:QiC6VX1oi7NuMA92r7eM@cd.splunkdev.com/cloudworks"]
-# 	insteadOf = http://cd.splunkdev.com/cloudworks
-
-[url "git@cd.splunkdev.com:"]
-    insteadOf = https://cd.splunkdev.com/
