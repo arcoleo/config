@@ -10,6 +10,12 @@
     - ruby
     - rbenv
 
+
+- name: rbenv folder
+  file:
+    path: ~/.rbenv
+    state: directory
+
 - name: Write default-gem file
   template:
     src: default-gems.j2

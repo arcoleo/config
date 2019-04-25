@@ -10,7 +10,7 @@ bootstrap:
 provision:
 	@echo "-----> Running ansible playbook to provision system..."
 	@HOMEBREW_CASK_OPTS="--appdir=/Applications" \
-		time ansible-playbook mac-osx.yml --diff --tags=base,large_apps,databases,devel,golang,langs,python,ruby,rust
+		time ansible-playbook mac-osx.yml --diff --tags=base,large_apps,databases,devel,golang,langs,python,ruby,rust,python_database_packages
 		# time ansible-playbook mac-osx.yml --diff --tags=python
 
 role:
@@ -22,3 +22,4 @@ role:
 	done
 
 .PHONY: all, role, bootstrap, provision
+

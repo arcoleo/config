@@ -18,10 +18,9 @@
 
 - name: Install python packages
   pip:
-    name: "{{ item }}"
+    name: "{{ python_packages }}"
     executable: pip
     state: latest
-  with_items: "{{ python_packages }}"
   tags:
     - python
 

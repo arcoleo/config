@@ -7,5 +7,6 @@
 	],
 	"shift_tab_unindent": true,
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+    "open_files_in_new_window": false,
 }

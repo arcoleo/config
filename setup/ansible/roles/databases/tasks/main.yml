@@ -12,10 +12,9 @@
 
 - name: Install python database packages
   pip:
-    name: "{{ item }}"
+    name: "{{ python_database_packages }}"
     executable: pip3
     state: latest
-  with_items: "{{ python_database_packages }}"
+  # with_items: "{{ python_database_packages }}"
   tags:
-    - python
-    - databases
+    - python_database_packages

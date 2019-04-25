@@ -13,10 +13,71 @@ Install Apple's command-line tools
 $ xcode-select --install
 ----
 
+== Brew
+
+Install Brew
+
+== Zsh
+
+Install Oh-my-zsh
+
+Revert `.zshrc` to what it should be (oh-my-zsh will over-write it and rename the old one).
+
+
+
+
+== Bash
+
+Make sure `.bashrc` and `.bash_profile` exist
+
+----
+$ touch ~/.bashrc ~/.bash_profile
+----
+
 == Setup
 
 ----
 $ cd arcoleo/config/setup/ansible
 $ make boostrap
-$ source ~/venv/general/bin/activate
+$ ansible-playbook mac-osx.yml --diff --tags=base,large_apps,databases,devel,golang,langs,python,ruby,rust,python_database_packages
 ----
+
+=== Main Apps
+
+----
+$ ansible-playbook mac-osx.yml --diff --tags=base,large_apps
+----
+
+=== Install Histdb
+
+Install https://github.com/larkery/zsh-histdb
+
+=== Databases
+
+----
+$ ansible-playbook mac-osx.yml --diff --tags=databases
+----
+
+=== Development Tools
+
+----
+$ ansible-playbook mac-osx.yml --diff --tags=devel,golang,langs,python,ruby
+----
+
+=== Combination Prerequisites
+
+==== Python & Databases
+
+----
+$ ansible-playbook mac-osx.yml --dif --tags=python_database_packages
+----
+
+== Manually Installed Tools Afterwards
+
+* Ripgrep - https://github.com/BurntSushi/ripgrep
+
+== Activate Installed Software
+
+=== Divvy
+
+Run `Applications -> Divvy.app`

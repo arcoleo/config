@@ -9,6 +9,8 @@ shortcut_folders:
       - VirtualBox.app
       - "Visual Studio Code.app"
       - XCode.app
+      - Kitty.app
+      - Postman.app
   - name: Media
     links:
       - calibre.app
@@ -20,7 +22,7 @@ shortcut_folders:
       - "Tag Editor.app"
   - name: Network
     links:
-      - Brave.app
+      - "Brave Browser.app"
       - Discord.app
       - FileZilla.app
       - Firefox.app
@@ -34,6 +36,9 @@ shortcut_folders:
       - Keynote.app
       - Numbers.app
       - Pages.app
+      - "Microsoft Excel.app"
+      - "Microsoft Powerpoint.app"
+      - "Microsoft Word.app"
       - yEd.app
   - name: Utils
     links:
@@ -51,3 +56,4 @@ shortcut_folders:
 #   Unison
 #   VLC
 #   zoom
+

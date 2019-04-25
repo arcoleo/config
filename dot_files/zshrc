@@ -93,4 +93,6 @@ fi
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
+export RIPGREP_CONFIG_PATH=${HOME}/.rg
+
 # ssh-add -K
