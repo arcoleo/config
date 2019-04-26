@@ -6,3 +6,4 @@ rust_init_cmd: "rustup-init -y --no-modify-path"
 
 rust_cargo_packages:
   - fd-find
+  - runiq
