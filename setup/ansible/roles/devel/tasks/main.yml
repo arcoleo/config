@@ -9,6 +9,9 @@
     - devel
     - brew
 
+- name: Install Terraform via tfenv
+  command: "tfenv install 0.11.14"
+
 # Split this way because options make it much slower
 - name: Install devel brew packages with options
   homebrew:
