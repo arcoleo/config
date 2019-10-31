@@ -1,4 +1,4 @@
-alias f="find . -name"
+alias noc=nocorrect
 
 alias dj='cd ~/repo/gitlab/arcoleo/django-proto'
 alias djs='cd ~/repo/gitlab/arcoleo/django-proto && source ./dev_pipshell'
@@ -6,6 +6,15 @@ alias djr='cd ~/repo/gitlab/arcoleo/django-proto/proj1/survey1 && ./run_server'
 
 # alias gsm="git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
 alias gsm1="git log"
+
+# Save all output of session to shell-YYYYMMDD-HH:MM:SS-<SHELL_PID>.log
+# To convert the file to normal readable ascii, run
+# ~/bin/ansi2txt < 20191030-17:02:50-8960.log > 20191030-17:02:50-8960.txt
+export SCRIPT_LOG_FILE=$(date +%Y%m%d-%H:%M:%S)-$$
+alias ss='script ~/GD/logs/shell/${SCRIPT_LOG_FILE}.log && ~/GD/bin/ansi2txt < ~/GD/logs/shell/${SCRIPT_LOG_FILE}.log > ~/GD/logs/shell/${SCRIPT_LOG_FILE}.txt && ~/GD/bin/ansi2html < ~/GD/logs/shell/${SCRIPT_LOG_FILE}.log > ~/GD/logs/shell/${SCRIPT_LOG_FILE}.html'
+
+
+
 
 # Emacs Stuff
 
