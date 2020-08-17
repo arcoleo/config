@@ -11,7 +11,7 @@ brew_cask_applications:
   - name: iterm2
   - name: visual-studio-code
   - name: caffeine
-  - name: dropbox
+  # - name: dropbox
   - name: evernote
   - name: firefox
   - name: google-chrome
@@ -33,10 +33,13 @@ brew_cask_applications:
   - name: telegram
   - name: emacs
   - name: path-finder
+  - name: yed
+  - name: kitty
+  - name: postman
   # - name: bartender
   # - name: cloak
   # - name: flux
-  
+
   # - name: google-cloud-sdk
   # - name: google-hangouts
   # - name: gpgtools

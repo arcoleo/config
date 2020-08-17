@@ -1,6 +1,41 @@
-alias f="find . -name"
+alias noc=nocorrect
 
 alias dj='cd ~/repo/gitlab/arcoleo/django-proto'
 alias djs='cd ~/repo/gitlab/arcoleo/django-proto && source ./dev_pipshell'
 alias djr='cd ~/repo/gitlab/arcoleo/django-proto/proj1/survey1 && ./run_server'
 
+# alias gsm="git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
+alias gsm1="git log"
+
+# Save all output of session to shell-YYYYMMDD-HH:MM:SS-<SHELL_PID>.log
+# To convert the file to normal readable ascii, run
+# ~/bin/ansi2txt < 20191030-17:02:50-8960.log > 20191030-17:02:50-8960.txt
+export SCRIPT_LOG_FILE=$(date +%Y%m%d-%H:%M:%S)-$$
+alias ss='script ~/GD/logs/shell/${SCRIPT_LOG_FILE}.log && ~/GD/bin/ansi2txt < ~/GD/logs/shell/${SCRIPT_LOG_FILE}.log > ~/GD/logs/shell/${SCRIPT_LOG_FILE}.txt && ~/GD/bin/ansi2html < ~/GD/logs/shell/${SCRIPT_LOG_FILE}.log > ~/GD/logs/shell/${SCRIPT_LOG_FILE}.html'
+
+
+
+
+# Emacs Stuff
+
+# Open in existing frame
+if [ "$OS" = "Darwin" ]; then
+    export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:${PATH}"
+    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [ "$OS" = "Linux" ]; then
+    alias ec="emacsclient -n  -a emacs"
+fi
+
+# Open in terminal
+if [ "$OS" = "Darwin" ]; then
+    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+elif [ "$OS" = "Linux" ]; then
+    alias et="emacsclient -t -a emacs -nw"
+fi
+
+# Open in new frame
+if [ "$OS" = "Darwin" ]; then
+    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [ "$OS" = "Linux" ]; then
+    alias ef="emacsclient -n -c -a emacs"
+fi

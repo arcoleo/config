@@ -15,11 +15,13 @@ devel_brew_packages:
   - name: mercurial
   - name: packer
   - name: s3cmd
-  - name: terraform
+  - name: tfenv
 
 devel_brew_packages_with_options:
   - name: git
     install_options: "with-gettext,with-pcre,with-persistent-https,with-blk-sha1"
+  - name: terragrunt
+    install_options: "ignore-dependencies"
 
 devel_cask_applications:
   - name: vagrant

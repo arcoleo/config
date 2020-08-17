@@ -54,6 +54,7 @@ brew_base_packages:
   - name: python3
   - name: readline
   - name: snappy
+  - name: sqlite
   - name: swiftlint
   - name: the_silver_searcher
   - name: tree

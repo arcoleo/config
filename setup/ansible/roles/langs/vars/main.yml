@@ -4,10 +4,11 @@ langs_brew_packages:
   - lua
   - luajit
   - ocaml
+  - llvm
 
-langs_brew_packages_options:
-  - name: llvm
-    install_options: "--with-toolchain --with-lldb"
+# langs_brew_packages_options:
+#   - name: llvm
+    # install_options: "--with-toolchain --with-lldb"
 
 erlang_brew_packages:
   - erlang

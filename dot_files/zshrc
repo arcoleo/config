@@ -2,72 +2,18 @@ OS=`uname -s`
 HOST=`uname -n`
 AT_WORK=0
 
-source ~/at_work.sh
-# echo "AT_WORK=${AT_WORK}"
 
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.cargo/bin"
+export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="candy"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-HIST_STAMPS="yyyy-mm-dd"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-
-plugins=(git cp extract history jira jsontools sublime)
-
 # Golang
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=on
+# go env -w GOPROXY=direct
+# go env -w GOSUMDB=off
 
 # Rust
 export PATH=$PATH:~/.cargo/bin
@@ -76,11 +22,8 @@ export PATH=$PATH:~/.cargo/bin
 export PATH="$PATH:~/.rbenv/versions/2.5.1/bin"
 eval "$(rbenv init - --no-rehash)"
 
-# Puppet
-# if [[ ${AT_WORK} -eq 1]]; then
-#     export PATH="$PATH:/opt/puppetlabs/bin:/opt/puppetlabs/pdk/bin"
-# fi
-
+# oh-my-zsh
+source ~/.zsh_omz
 source $ZSH/oh-my-zsh.sh
 
 
@@ -103,37 +46,21 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/id_rsa"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-
-
-
 export HISTSIZE=10000000
 export SAVEHIST=$HISTSIZE
-#export HISTFILE=~/Dropbox/config/zsh_history
+
 # prevent entires from being recorded by preceding them with at least one space
 setopt hist_ignore_space
 
 # Brew Stuff
 export PATH=/usr/local/opt/libxml2/bin:/usr/local/opt/sqlite/bin:${PATH}:/usr/local/opt/binutils/bin
 
+source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 # Python
 eval "$(pyenv init -)"
 
 
-export CW_HOME=${HOME}/cloud
-
-# fpath+=~/.zfunc
-# fpath+=~/.zfuncs
 fpath=(
     ~/.zfunc
     ~/.zfuncs
@@ -149,41 +76,17 @@ autoload -Uz gsm
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd histdb-update-outcome
 
-if [[ ${AT_WORK} -eq 1 ]]; then
-    echo "AT_WORK, loading ~/at_work.zshrc"
-    source ~/at_work.zshrc
-fi
-
-
 
 # export PROMPT_COMMAND='log-recent -r $? -c "$(HISTTIMEFORMAT= history 1)" -p $$'
-export PATH="/usr/local/opt/binutils/bin:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/binutils/bin:/usr/local/opt/curl/bin:$PATH"
+
+export RIPGREP_CONFIG_PATH=${HOME}/.rg
 
 # ssh-add -K
 
-# Emacs Stuff
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Open in existing frame
-if [ "$OS" = "Darwin" ]; then
-    export PATH="${PATH}:/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin"
-    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
-elif [ "$OS" = "Linux" ]; then
-    alias ec="emacsclient -n  -a emacs"
+source ~/at_work.sh
+if [[ ${AT_WORK} -eq 1 ]]; then
+    source ~/work.zshrc
 fi
-
-# Open in terminal
-if [ "$OS" = "Darwin" ]; then
-    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-elif [ "$OS" = "Linux" ]; then
-    alias et="emacsclient -t -a emacs -nw"
-fi
-
-# Open in new frame
-if [ "$OS" = "Darwin" ]; then
-    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
-elif [ "$OS" = "Linux" ]; then
-    alias ef="emacsclient -n -c -a emacs"
-fi
-
-source ~/repo/gitlab/arcoleo/proto-orchestration/zshrc
