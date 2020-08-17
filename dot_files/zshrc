@@ -5,7 +5,11 @@ AT_WORK=0
 source ~/at_work.sh
 # echo "AT_WORK=${AT_WORK}"
 
-export PATH="/Users/darcoleo/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.cargo/bin"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.cargo/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Path to your oh-my-zsh installation.
@@ -109,29 +113,7 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# Emacs Stuff
 
-# Open in existing frame
-if [ "$OS" = "Darwin" ]; then
-    export PATH="/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin:${PATH}"
-    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
-elif [ "$OS" = "Linux" ]; then
-    alias ec="emacsclient -n  -a emacs"
-fi
-
-# Open in terminal
-if [ "$OS" = "Darwin" ]; then
-    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-elif [ "$OS" = "Linux" ]; then
-    alias et="emacsclient -t -a emacs -nw"
-fi
-
-# Open in new frame
-if [ "$OS" = "Darwin" ]; then
-    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
-elif [ "$OS" = "Linux" ]; then
-    alias ef="emacsclient -n -c -a emacs"
-fi
 
 
 export HISTSIZE=10000000
@@ -179,3 +161,29 @@ export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # ssh-add -K
+
+# Emacs Stuff
+
+# Open in existing frame
+if [ "$OS" = "Darwin" ]; then
+    export PATH="${PATH}:/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin"
+    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [ "$OS" = "Linux" ]; then
+    alias ec="emacsclient -n  -a emacs"
+fi
+
+# Open in terminal
+if [ "$OS" = "Darwin" ]; then
+    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+elif [ "$OS" = "Linux" ]; then
+    alias et="emacsclient -t -a emacs -nw"
+fi
+
+# Open in new frame
+if [ "$OS" = "Darwin" ]; then
+    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [ "$OS" = "Linux" ]; then
+    alias ef="emacsclient -n -c -a emacs"
+fi
+
+source ~/repo/gitlab/arcoleo/proto-orchestration/zshrc
