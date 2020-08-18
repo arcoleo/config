@@ -22,12 +22,12 @@ brew_cask_applications:
   - name: sublime-text
   - name: the-unarchiver
   - name: qbittorrent
-  - name: mackup
+#   - name: mackup
   - name: atom
   - name: sourcetree
   - name: calibre
   - name: discord
-  - name: filezilla
+#   - name: filezilla
   - name: authy
   - name: vagrant-manager
   - name: telegram

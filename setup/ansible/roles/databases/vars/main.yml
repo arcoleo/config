@@ -5,7 +5,7 @@ databases_brew_packages:
   - name: mysql
   - name: redis
   - name: sqlite
-  - name: mongodb
+  - name: mongodb-community
 
 python_database_packages:
   - psycopg2-binary

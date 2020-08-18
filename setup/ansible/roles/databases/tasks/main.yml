@@ -1,5 +1,12 @@
 ---
 
+- name: Install brew taps
+  command: >
+    brew tap mongodb/brew
+  tags:
+    - brew-tap
+    - databases
+
 - name: Install database packages
   homebrew:
     name: "{{ item.name }}"

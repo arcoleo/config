@@ -1,5 +1,14 @@
 ---
 
+- name: Uninstall binutils to install ruby
+  homebrew:
+    name: binutils
+    state: absent
+  tags:
+    - brew
+    - ruby
+    - rbenv
+
 - name: Install rbenv via homebrew
   homebrew:
     name: "{{ item.name }}"
@@ -10,11 +19,13 @@
     - ruby
     - rbenv
 
-
 - name: rbenv folder
   file:
     path: ~/.rbenv
     state: directory
+  tags:
+    - ruby
+    - rbenv
 
 - name: Write default-gem file
   template:
@@ -57,3 +68,12 @@
     - ruby
     - dependencies
     - gems
+
+- name: Reinstall binutils to install ruby
+  homebrew: 
+    name: binutils
+    state: latest
+  tags:
+    - brew
+    - ruby
+    - rbenv
