@@ -21,7 +21,6 @@ Install Brew
 
 ----
 brew cask install google-chrome
-brew install git
 ----
 
 == Zsh
@@ -45,7 +44,7 @@ $ touch ~/.bashrc ~/.bash_profile
 
 ----
 $ cd arcoleo/config/setup/ansible
-$ make boostrap
+$ make bootstrap
 $ ansible-playbook mac-osx.yml --diff --tags=base,large_apps,databases,devel,golang,langs,python,ruby,rust,python_database_packages
 ----
 
