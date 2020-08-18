@@ -17,6 +17,13 @@ $ xcode-select --install
 
 Install Brew
 
+=== Some Apps from Brew
+
+----
+brew cask install google-chrome
+brew install git
+----
+
 == Zsh
 
 Install Oh-my-zsh
