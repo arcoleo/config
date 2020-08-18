@@ -10,12 +10,13 @@ brew_cask_applications:
   - name: appzapper
   - name: iterm2
   - name: visual-studio-code
+  - name: visual-studio-code-insiders
   - name: caffeine
   # - name: dropbox
   - name: evernote
   - name: firefox
+  - name: brave-browser
   - name: google-chrome
-  - name: jedit
   - name: kindle
   - name: skype
   - name: slack

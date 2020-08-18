@@ -1,5 +1,16 @@
 ---
 
+shortcut_folders_system:
+
+  - name: Media
+    links:
+      - Books.app
+      - "Image Capture.app"
+      
+  - name: Network
+    links:
+      - Messages.app
+      
 shortcut_folders:
   - name: Dev
     links:
@@ -11,26 +22,26 @@ shortcut_folders:
       - XCode.app
       - Kitty.app
       - Postman.app
+      
   - name: Media
     links:
       - calibre.app
-      - "Image Capture.app"
       - iMovie.app
-      - iTunes.app
+#       - iTunes.app
       - Kindle.app
-      - "Ondesoft Audiobook Converter.app"
-      - "Tag Editor.app"
+#       - "Tag Editor.app"
+      
   - name: Network
     links:
       - "Brave Browser.app"
       - Discord.app
-      - FileZilla.app
+#       - FileZilla.app
       - Firefox.app
-      - Messages.app
       - qbittorrent.app
       - Skype.app
       - Slack.app
       - Telegram.app
+      
   - name: Office
     links:
       - Keynote.app
@@ -40,6 +51,7 @@ shortcut_folders:
       - "Microsoft Powerpoint.app"
       - "Microsoft Word.app"
       - yEd.app
+      
   - name: Utils
     links:
       - "Authy Desktop.app"

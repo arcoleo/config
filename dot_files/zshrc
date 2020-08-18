@@ -70,7 +70,7 @@ fpath=(
 
 # fpath+=~/.zfunc
 source ~/.zsh_alias
-source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
+#source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz arcoleo
 autoload -Uz gsm
 autoload -Uz add-zsh-hook

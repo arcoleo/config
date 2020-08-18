@@ -41,14 +41,9 @@
     - brew
     - cleanup
 
-- name: Cleanup cask
-  command: "brew cask cleanup"
-  ignore_errors: True
-  tags:
+- include: app_shortcuts.yml
+  tags: 
+    - shortcuts
     - large_apps
     - brew
     - brew-cask
-    - cleanup
-
-- include: app_shortcuts.yml
-  tags: shortcuts
