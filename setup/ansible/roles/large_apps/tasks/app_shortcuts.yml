@@ -24,13 +24,21 @@
 
 
 - name: "Ensure symlinks in shortcut folders"
-  # debug: msg="Hello {{ item.0.name }} / {{ item.1 }}"
   file:
     src: /Applications/{{ item.1 }}
     dest: /Applications/shortcuts/{{ item.0.name }}/{{ item.1}}
     state: link
   with_subelements:
     - "{{ shortcut_folders }}"
+    - links
+
+- name: "Ensure symlinks in shortcut folders for systems apps"
+  file:
+    src: /System/Applications/{{ item.1 }}
+    dest: /Applications/shortcuts/{{ item.0.name }}/{{ item.1}}
+    state: link
+  with_subelements:
+    - "{{ shortcut_folders_system }}"
     - links
 
 # - name: Add a domain symlinks 

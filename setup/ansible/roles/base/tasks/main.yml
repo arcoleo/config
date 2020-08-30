@@ -28,17 +28,11 @@
 
 - name: Install brew taps
   command: >
-    brew tap caskroom/versions
-  # brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
+    brew tap homebrew/cask-versions
   tags:
     - base
     - brew
     - brew-tap
-
-# - name: Install brew taps
-#   homebrew_tap:
-#     name: burntsushi/ripgrep
-#     url: 'https://github.com/BurntSushi/ripgrep.git'
 
 - name: Install base homebrew packages
   homebrew:

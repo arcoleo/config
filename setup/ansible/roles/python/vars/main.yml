@@ -3,7 +3,7 @@
 python_packages:
   - virtualenv
   - autopep8
-  - pip
+#   - pip
   - pipenv
   - pylint
   - requests
@@ -11,7 +11,7 @@ python_packages:
   - docker-py
 
 
-python_pyenv_install_cmd: "CFLAGS=\"-I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include\" LDFLAGS=\"-L$(brew --prefix openssl)/lib -L/usr/local/opt/sqlite/lib\" pyenv install"
-python_use_pyenv: True
-python_pyenv_versions:
-  - 3.7.2
+# python_pyenv_install_cmd: "CFLAGS=\"-I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include\" LDFLAGS=\"-L$(brew --prefix openssl)/lib -L/usr/local/opt/sqlite/lib\" pyenv install"
+# python_use_pyenv: True
+# python_pyenv_versions:
+#   - 3.7.2

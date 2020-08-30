@@ -1,12 +1,15 @@
-#zmodload zsh/datetime
-#setopt promptsubst
-#PS4='+$EPOCHREALTIME %N:%i> '
-#exec 3>&2 2>/tmp/startlog.$$
-#setopt xtrace prompt_subst
+OS=`uname -s`
+HOST=`uname -n`
+AT_WORK=0
 
+source ~/at_work.sh
+# echo "AT_WORK=${AT_WORK}"
 
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darcoleo/.rbenv/versions/1.9.3-p545/bin"
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.cargo/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Path to your oh-my-zsh installation.
@@ -17,6 +20,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="candy"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -58,12 +62,30 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git)
+plugins=(git cp extract history jira jsontools sublime)
 
-# User configuration
+# Golang
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
+# Rust
+export PATH=$PATH:~/.cargo/bin
+
+# Ruby
+export PATH="$PATH:~/.rbenv/versions/2.5.1/bin"
+eval "$(rbenv init - --no-rehash)"
+
+# Puppet
+# if [[ ${AT_WORK} -eq 1]]; then
+#     export PATH="$PATH:/opt/puppetlabs/bin:/opt/puppetlabs/pdk/bin"
+# fi
 
 source $ZSH/oh-my-zsh.sh
+
+
+# AsciiDoc
+export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -90,21 +112,78 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=~/bin:/usr/local/sbin:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
 
-export HISTFILE=~/Dropbox/config/zsh_history
 
-eval "$(rbenv init - --no-rehash)"
+
+
+export HISTSIZE=10000000
+export SAVEHIST=$HISTSIZE
+#export HISTFILE=~/Dropbox/config/zsh_history
+# prevent entires from being recorded by preceding them with at least one space
+setopt hist_ignore_space
+
+# Brew Stuff
+export PATH=/usr/local/opt/libxml2/bin:/usr/local/opt/sqlite/bin:${PATH}:/usr/local/opt/binutils/bin
+
+
+# Python
+eval "$(pyenv init -)"
+
+
+export CW_HOME=${HOME}/cloud
+
+# fpath+=~/.zfunc
+# fpath+=~/.zfuncs
+fpath=(
+    ~/.zfunc
+    ~/.zfuncs
+    ~/.zfuncs/**/*~*/(CVS)#(/N)
+    "${fpath[@]}"
+)
+
+# fpath+=~/.zfunc
 source ~/.zsh_alias
+source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
+autoload -Uz arcoleo
+autoload -Uz gsm
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd histdb-update-outcome
+
+if [[ ${AT_WORK} -eq 1 ]]; then
+    echo "AT_WORK, loading ~/at_work.zshrc"
+    source ~/at_work.zshrc
+fi
 
 
 
+# export PROMPT_COMMAND='log-recent -r $? -c "$(HISTTIMEFORMAT= history 1)" -p $$'
+export PATH="/usr/local/opt/binutils/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
 
+# ssh-add -K
 
-# turn off tracing
-#unsetopt xtrace
-# restore stderr to the value saved in FD 3
-#exec 2>&3 3>&-
+# Emacs Stuff
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# Open in existing frame
+if [ "$OS" = "Darwin" ]; then
+    export PATH="${PATH}:/Applications/Emacs.app/Contents/MacOS:/Applications/Emacs.app/Contents/MacOS/bin"
+    alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [ "$OS" = "Linux" ]; then
+    alias ec="emacsclient -n  -a emacs"
+fi
+
+# Open in terminal
+if [ "$OS" = "Darwin" ]; then
+    alias et="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+elif [ "$OS" = "Linux" ]; then
+    alias et="emacsclient -t -a emacs -nw"
+fi
+
+# Open in new frame
+if [ "$OS" = "Darwin" ]; then
+    alias ef="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+elif [ "$OS" = "Linux" ]; then
+    alias ef="emacsclient -n -c -a emacs"
+fi
+
+source ~/repo/gitlab/arcoleo/proto-orchestration/zshrc

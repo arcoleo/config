@@ -8,37 +8,14 @@
     - brew-cask
     - update
 
-# - name: Install base homebrew packages
-#   homebrew:
-#     name: "{{ brew_base_packages }}"
-#     state: latest
-#   tags:
-#     - base
-#     - brew
-
-# - name: Brew untap
-#   homebrew_tap:
-#     name: "{{ item.name }}"
-#     state: absent
-#   with_items: "{{ brew_taps }}"
-#   tags:
-#     - base
-#     - brew
-#     - brew-tap
-
 - name: Install brew taps
   command: >
-    brew tap caskroom/versions
+    brew tap homebrew/cask-versions
   # brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
   tags:
     - large_apps
     - brew
     - brew-tap
-
-# - name: Install brew taps
-#   homebrew_tap:
-#     name: burntsushi/ripgrep
-#     url: 'https://github.com/BurntSushi/ripgrep.git'
 
 
 - name: Install brew cask applications
@@ -64,14 +41,9 @@
     - brew
     - cleanup
 
-- name: Cleanup cask
-  command: "brew cask cleanup"
-  ignore_errors: True
-  tags:
+- include: app_shortcuts.yml
+  tags: 
+    - shortcuts
     - large_apps
     - brew
     - brew-cask
-    - cleanup
-
-- include: app_shortcuts.yml
-  tags: shortcuts
