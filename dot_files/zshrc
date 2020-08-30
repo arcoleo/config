@@ -4,6 +4,7 @@ OS=`uname -s`
 HOST=`uname -n`
 AT_WORK=0
 
+export ZSH=$HOME/.oh-my-zsh
 
 # Golang - we want manually installed Go to come before brew's go
 export PATH=/usr/local/go/bin:$PATH
