@@ -27,10 +27,10 @@ eval "$(rbenv init - --no-rehash)"
 source ~/at_work.sh
 if [[ ${AT_WORK} -eq 1 ]]; then
     source ~/work.zshrc
+    source ~/.splunk_zsh_omz
 fi
 
 # oh-my-zsh
-source ~/.splunk_zsh_omz
 source $ZSH/oh-my-zsh.sh
 
 
