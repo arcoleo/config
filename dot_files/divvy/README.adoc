@@ -1,0 +1,4 @@
+= Divvy
+
+Link to these files from ~/Library/Preferences
+
