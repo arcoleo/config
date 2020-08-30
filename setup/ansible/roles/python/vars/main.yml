@@ -1,9 +1,11 @@
 ---
 
+python_brew_packages:
+  - pyenv-virtualenv
+
 python_packages:
   - virtualenv
   - autopep8
-#   - pip
   - pipenv
   - pylint
   - requests
