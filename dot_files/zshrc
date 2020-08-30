@@ -4,6 +4,7 @@ OS=`uname -s`
 HOST=`uname -n`
 AT_WORK=0
 
+
 # Golang - we want manually installed Go to come before brew's go
 export PATH=/usr/local/go/bin:$PATH
 export GOPATH=$HOME/go
@@ -22,8 +23,14 @@ export MANPATH="/usr/local/man:$MANPATH"
 # Ruby
 export PATH="${PATH}:~/.rbenv/versions/2.5.1/bin"
 eval "$(rbenv init - --no-rehash)"
+
+source ~/at_work.sh
+if [[ ${AT_WORK} -eq 1 ]]; then
+    source ~/work.zshrc
+fi
+
 # oh-my-zsh
-source ~/.zsh_omz
+source ~/.splunk_zsh_omz
 source $ZSH/oh-my-zsh.sh
 
 
@@ -74,10 +81,10 @@ fpath=(
 # fpath+=~/.zfunc
 source ~/.zsh_alias
 #source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
-autoload -Uz arcoleo
-autoload -Uz gsm
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd histdb-update-outcome
+#autoload -Uz arcoleo
+#autoload -Uz gsm
+#autoload -Uz add-zsh-hook
+#add-zsh-hook precmd histdb-update-outcome
 
 
 # export PROMPT_COMMAND='log-recent -r $? -c "$(HISTTIMEFORMAT= history 1)" -p $$'
@@ -88,9 +95,9 @@ export RIPGREP_CONFIG_PATH=${HOME}/.rg
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-source ~/at_work.sh
+#source ~/at_work.sh
 if [[ ${AT_WORK} -eq 1 ]]; then
-    source ~/work.zshrc
+    source ~/work-2.zshrc
 fi
 
 export PATH="${HOME}/bin:${PATH}"
