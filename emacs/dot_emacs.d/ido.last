@@ -1,0 +1,47 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/darcoleo/GD/CO2/tickets/" . "Epic-CO2-867-OnDemand-Puppet/")
+ ("/Users/darcoleo/GD/CO2/" . "tickets/")
+ ("/Users/darcoleo/GD/" . "CO2/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/darcoleo/.puppetlabs/client-tools/"
+ "/Users/darcoleo/GD/CO2/tickets/Epic-CO2-867-OnDemand-Puppet/"
+ "/Users/darcoleo/GD/CO2/tickets/CO2-346/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "set_dev"
+ "note1.txt"
+ "dsa.2.yaml"
+ "rbac-api.zsh"
+ "CO2-346.adoc"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/darcoleo/.puppetlabs/client-tools/" (24353 54659 0 0) "set_lve" "set_stg" "set_dev" "puppetdb.conf.lve" "puppetdb.conf.stg" "puppetdb.conf.dev" "puppet-access.conf.lve" "puppet-access.conf.stg" "puppet-access.conf.dev" "orchestrator.conf.lve" "orchestrator.conf.stg" "orchestrator.conf.dev")
+
+ ("/Users/darcoleo/GD/CO2/tickets/Epic-CO2-867-OnDemand-Puppet/" (24297 24905 0 0) "note1.txt" "dsa-dev.yaml" "key.json" "StackV1.scan.json" "dsa.2.yaml" "dsa3-dev.yaml" "dsa3.yaml" "scratch4.json" "dsa.k8s.yaml" "scratch3.json" "scratch2.json" "dsa.yaml" "dsa.puppetjob.yaml" "demo.log" "puppetjob.ref.yaml" "puppetjob.yaml" "scratch.json" "CO2-867.adoc" "CO2-346/")
+
+ ("/Users/darcoleo/" (24297 24905 554591 659000) "splunk-cloud-operator-ns.yaml" ".viminfo" ".bash_history" "repo/" ".gitconfig" ".aws/" ".python_history" "Downloads/" "data/" ".oh-my-zsh/" ".puppetlabs/" ".gem/" ".bash_profile" ".hyper.js" ".vscode/" "cw" ".pyenv/" ".zsh_alias" "venv/" "Documents/" ".terraform.d/" ".npm/" ".vscode-insiders/" ".jupyter/" ".gitflow_export" "GD/" ".Trash/" "audit_secret.log" ".fn/" "Applications/" ".emacs" "Movies/" ".ssh/" ".rustup/" "2.yaml" ".ansible/" ".splunk/" "android/" ".histdb/" ".ringcentralopener" "sdk/" ".quicktype-vscode/" ".kube/" ".hyper_plugins/" "at_work.sh" "Public/" ".iterm2/" "3.yaml" ".zsh_omz" ".bash_sessions/" ".terraformrc" ".cups/" ".gitignore_global" ".dlv/" ".cargo/" ".emacs.d/" ".minikube/" "google-cloud-sdk/" "audit_access.log" ".rgignore" "1/" ".zcompdump-darcoleo-mbp-4ff94-5.3" "Library/" "Desktop/" ".iterm2_shell_integration.zsh" ".ipython/" ".zsh_history" "demo1.txt" "Postman/" "dsa/" ".rnd" "work.zshrc" "1.yaml" ".zprofile" ".atom/" ".zshrc.backup" ".multirust/" ".pylint.d/" "Pictures/" "zsh_history" ".local/" ".zfunc/" ".zshrc_orig" "vagrant/" "tmux.conf" ".zshrc" ".bashrc" ".subversion/" ".vagrant.d/" ".rbenv/" "bin/" "Google Drive File Stream/" ".zcompdump-darcoleo-mbp-4ff94-5.7.1" ".tooling/" ".wget-hsts" ".hgignore_global" ".CFUserTextEncoding" "VirtualBox VMs/" ".tflint.hcl" ".vault-token" ".cloudctl/" ".DS_Store" "go/" "thinkorswim/" ".rg" ".thinkorswim/" ".docker/" "crypto/" ".gvm/" ".rest-client/" "Material Darker Small.icls" "Music/" ".config/" "60.py" ".vscode-cpptools/" "../" "./")
+
+ ("/Users/darcoleo/GD/CO2/tickets/" (24261 39961 0 0) "Epic-CO2-867-OnDemand-Puppet/" "CO2-892/" "CO2-113/" "riskified.yaml" "TO-6203/" "TO-6079/" "CO2-697/" "CIP-499/" "CO2-349/" "CO2-512/" "CO2-627/" "CO2-578/" "CIP-372/" "CO2-65/" "CO2-7/" "CO2-521/" "CO2-415/")
+
+ ("/Users/darcoleo/GD/tickets/" (24124 37459 0 0) "CO-26478.adoc" "CWORKS-4862/" "CO2-282/" "CO2-277/" "CO2-227/" "CO2-242/" "CO2-rt-test3/" "CO2-132/" "CO2-194/" "CO2-171/" "CO2-151.adoc" "CO2-122/" "Nike-Kimono.txt" "AMI-10032.txt" "AMI-2988--DMC_Forwarder_Management/" "AMI-4269/" "AMI-4027/" "SEC-4261/" "AMI-7328.html" "AMI-7328.adoc" "AMI-4194.txt" "dsa-ami-4194-shc-12x-template.json" "SEC-4087.txt" "SEC-3985.txt")
+
+ ("/Users/darcoleo/GD/" (24290 38094 0 0) "Icon
+" "dot_puppetlabs/" "Pictures/" "data/" "Downloads/" "CO2-7.gdoc" ".vscode/" "CO2 LMGTFY.gsheet" "CO2/" "migrate/" "tickets/" "config/" "production/" "cloudworks/" "Education/" "Box-DavidArcoleo/" "bin/" "tmp/" "Documents/" "docker/" "shared_docker/" "logs/" "cleanup/" "Downloads-Splunk/" "scripts/" "aws/" "test/")
+
+ ("/Users/darcoleo/GD/CO2/tickets/CO2-346/" (24251 13172 0 0) "rbac-api.zsh" "user_deploy.sh" "user_deploy.json" ".vagrant/" "bootstrap-node.sh" "bootstrap-master.sh" "nodes.json" "Vagrantfile" "CO2-346.adoc")
+
+ ("/Users/darcoleo/GD/CO2/" (24245 41451 0 0) "docs/" "notes-for-cory.rst" "notes-for-cory.adoc" "GitUsage.md" "Kubernetes Notes.adoc" "CO2 Skynet Queries.adoc" "ProductionNotes.md" "Production.adoc" "tickets/" "SingleInstanceDemo/" "stacks/" "SplunkCloudOperator.adoc" "ideas.adoc" "Cloudctl Notes.adoc")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
