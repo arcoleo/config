@@ -29,6 +29,8 @@ source ~/at_work.sh
 if [[ ${AT_WORK} -eq 1 ]]; then
     source ~/work.zshrc
     source ~/.splunk_zsh_omz
+else 
+    source ~/.zsh_omz
 fi
 
 # oh-my-zsh
