@@ -12,3 +12,6 @@
 TAGS
 *elc
 .ropeproject
+.vscode
+.idea
+
