@@ -119,3 +119,7 @@ if [ -f '/Users/darcoleo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/darcol
 if [ -f '/Users/darcoleo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/darcoleo/google-cloud-sdk/completion.zsh.inc'; fi
 
 [[ -s "/Users/darcoleo/.gvm/scripts/gvm" ]] && source "/Users/darcoleo/.gvm/scripts/gvm"
+
+[[ -s "/Users/arcoleo/.gvm/scripts/gvm" ]] && source "/Users/arcoleo/.gvm/scripts/gvm"
+
+export PATH="$HOME/.poetry/bin:$PATH"

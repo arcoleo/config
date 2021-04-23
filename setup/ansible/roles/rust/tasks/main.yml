@@ -21,5 +21,14 @@
   with_items: "{{ rust_cargo_packages }}"
   tags:
     - rust
+    - rust-packages
 
-- debug: msg="Please install ripgrep manually"
+- name: Install utils written in rust from homebrew packages
+  homebrew:
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ rust_brew_utils }}"
+  tags:
+    - rust-brew-utils
+    - brew

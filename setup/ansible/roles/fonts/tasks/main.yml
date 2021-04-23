@@ -1,0 +1,21 @@
+---
+
+
+
+- name: tap cask-fonts
+  command: >
+    brew tap homebrew/cask-fonts
+  tags:
+    - brew
+    - brew-tap
+    - fonts
+
+- name: Install brew fonts
+  homebrew_cask:
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ font_brew_packages }}"
+  tags:
+    - fonts
+    - brew

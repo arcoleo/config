@@ -5,5 +5,17 @@ rust_brew_packages:
 rust_init_cmd: "rustup-init -y --no-modify-path"
 
 rust_cargo_packages:
-  - fd-find
-  - runiq
+  - fd-find  # like find
+  - runiq  # like uniq
+  - procs  # like ps
+  - ripgrep  # like grep
+  - exa  # like ls
+  - du-dust  # like du
+  - bat  # like cat
+  - fselect  # like find, with sql-like syntax
+  - hyperfine  # command-line benchmarking tool
+  - zenith  # like top
+  - tokei  # code counter
+  - delta  # like diff
+  
+  

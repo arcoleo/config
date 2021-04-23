@@ -1,0 +1,25 @@
+---
+
+font_brew_packages:
+  - name: font-iosevka
+  - name: font-iosevka-aile
+  - name: font-iosevka-curly
+  - name: font-iosevka-curly-slab
+  - name: font-iosevka-etoile
+  - name: font-iosevka-nerd-font
+  - name: font-iosevka-slab
+  - name: font-iosevka-sparkle
+  - name: font-iosevka-ss01
+  - name: font-iosevka-ss02  
+  - name: font-iosevka-ss03
+  - name: font-iosevka-ss04
+  - name: font-iosevka-ss05
+  - name: font-iosevka-ss06
+  - name: font-iosevka-ss07
+  - name: font-iosevka-ss08
+  - name: font-iosevka-ss09
+  - name: font-iosevka-ss10
+  - name: font-iosevka-ss11
+  - name: font-iosevka-ss12
+  - name: font-iosevka-ss13
+  - name: font-iosevka-ss14
