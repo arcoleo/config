@@ -1,0 +1,2 @@
+export VAULT_ADDR='https://vault.splunkcloud.systems'
+export VAULT_TOKEN=$(vault login -address="https://vault.splunkcloud.systems" -method=okta username=${USER} | grep 'token  ' | cut -f2- -d' ' | sed 's/^ *//g')
