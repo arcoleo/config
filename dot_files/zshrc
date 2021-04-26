@@ -28,7 +28,7 @@ eval "$(rbenv init - --no-rehash)"
 source ~/at_work.sh
 if [[ ${AT_WORK} -eq 1 ]]; then
     source ~/work.zshrc
-    source ~/.splunk_zsh_omz
+    source ~/.work_zsh_omz
 else 
     source ~/.zsh_omz
 fi
@@ -65,12 +65,12 @@ setopt hist_ignore_space
 # Brew Stuff
 export PATH=/usr/local/opt/libxml2/bin:/usr/local/opt/sqlite/bin:${PATH}:/usr/local/opt/binutils/bin
 
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+source /opt/homebrew/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 # Python
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+#  eval "$(pyenv virtualenv-init -)"
 fi
 
 
