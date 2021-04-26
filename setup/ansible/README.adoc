@@ -21,6 +21,13 @@ Install Brew
 
 ----
 brew cask install google-chrome
+brew install pyenv pyenv-virtualenv
+brew install zsh
+----
+
+----
+pyenv install 3.9.0
+pyenv global 3.9.0
 ----
 
 == Zsh

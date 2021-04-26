@@ -28,19 +28,19 @@ fi
 
 if [ `which brew` ]; then
     brew install pyenv openssl readline git zlib
-    git clone https://github.com/momo-lab/pyenv-install-latest.git "$(pyenv root)"/plugins/pyenv-install-latest
+    #git clone https://github.com/momo-lab/pyenv-install-latest.git "$(pyenv root)"/plugins/pyenv-install-latest
     # CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 2.7
-    CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 3.8.5
-    eval "$(pyenv init -)"
-    pyenv global 3.8.5
+    i#CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 3.8.5
+    #eval "$(pyenv init -)"
+    #pyenv global 3.8.5
 
-    display "Append to ~.zshrc"
-    display "# Python"
-	display 'eval "$(pyenv init -)"'
-	display ""
-	display "Open a new shell, run 'pyenv versions', then 'pyenv global <desired_version>', then 'make provision'"
-	pip3 install ansible
-	pyenv rehash
+    #display "Append to ~.zshrc"
+    #display "# Python"
+	#display 'eval "$(pyenv init -)"'
+	#display ""
+	#display "Open a new shell, run 'pyenv versions', then 'pyenv global <desired_version>', then 'make provision'"
+	#pip3 install ansible
+	#pyenv rehash
 
     # pip3 install --upgrade pip
     # pip3 install --upgrade requirements

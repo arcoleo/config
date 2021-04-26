@@ -14,4 +14,4 @@ TAGS
 .ropeproject
 .vscode
 .idea
-
+local.env.shell
