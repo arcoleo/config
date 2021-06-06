@@ -1,2 +1,21 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+
+# Setting PATH for Python 3.9
+# The original version is saved in .zprofile.pysave
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+
+
+#PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+#export PATH
+#if [ -n "$PYTHONPATH" ]; then
+#    export PYTHONPATH='/opt/homebrew/Cellar/pdm/1.5.3/libexec/lib/python3.9/site-packages/pdm/pep582':$PYTHONPATH
+#else
+#    export PYTHONPATH='/opt/homebrew/Cellar/pdm/1.5.3/libexec/lib/python3.9/site-packages/pdm/pep582'
+#fi
+
+

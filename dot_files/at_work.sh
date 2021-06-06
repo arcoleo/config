@@ -1,2 +1,2 @@
-export AT_WORK=1
+export AT_WORK="work"
 

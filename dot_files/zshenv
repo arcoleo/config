@@ -1,0 +1,53 @@
+# --- General ---
+
+export OS=`uname -s`
+export HOST=`uname -n`
+export HARDWARE=`uname -m`
+export AT_WORK="home"
+export LOGPATH="${HOME}/Documents/logs"
+export MANPATH="/usr/local/man:$MANPATH"
+export ZSH=$HOME/.oh-my-zsh
+
+
+# -- SSH
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+# -- Brew
+export PATH="/usr/local/opt/libxml2/bin:/usr/local/opt/sqlite/bin:${PATH}"
+export PATH="${PATH}:/usr/local/opt/binutils/bin:/usr/local/sbin:/usr/local/mysql/bin"
+export PATH="/usr/local/opt/libpq/bin:${PATH}"
+export PATH="/usr/local/opt/curl/bin:${PATH}"
+
+
+# --- Golang ---
+# we want manually installed Go to come before brew's go
+export PATH=/usr/local/go/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=on
+[[ -s "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
+
+# --- Python
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+[[ -s "${HOME}/.poetry" ]] && export PATH="${HOME}/.poetry/bin:${PATH}"
+
+# --- Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# -- Node
+export NVM_DIR="${HOME}/.nvm"
+
+# --- AsciiDoc
+export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
+
+# -- Other
+export RIPGREP_CONFIG_PATH=${HOME}/.rg
+export PATH="${PATH}:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
