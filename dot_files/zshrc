@@ -69,7 +69,7 @@ fpath=(
     "${fpath[@]}"
 )
 
-
+pdm completion zsh > $ZSH_CUSTOM/plugins/pdm/_pdm
 
 # fpath+=~/.zfunc
 #source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh

@@ -1,4 +1,5 @@
 alias n=nocorrect
+alias v=nvim
 
 alias dj='cd ~/repo/gitlab/arcoleo/django-proto'
 alias djs='cd ~/repo/gitlab/arcoleo/django-proto && source ./dev_pipshell'

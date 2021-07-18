@@ -51,3 +51,6 @@ export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 # -- Other
 export RIPGREP_CONFIG_PATH=${HOME}/.rg
 export PATH="${PATH}:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+
+source ${HOME}/.zshenv_secret
+
